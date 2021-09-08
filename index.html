@@ -39,8 +39,8 @@
         <div class="demo-auto-fact container container-fluid">
             <div>
                 <div class="display-5 text-center demo-title-box-auto-fact p-2">See <b>AutoFact</b> in action</div>
-                <div class="lead text-center m-4">Change the parameters to your liking and see the magic of <b>AutoFact</b>.</div>
-                <div class="form-auto-fact row mx-1 my-5 p-3">
+                <div class="lead text-center m-3">Change the parameters to your liking and see the magic of <b>AutoFact</b>.</div>
+                <div class="form-auto-fact row mx-1 my-2 p-3">
                     <div class="col-3">
                         <label for="task-model-pair" class="form-label">Task-model pair</label>
                         <select id="task-model-pair" class="form-select" aria-label="Default select example">
@@ -75,7 +75,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="my-5">
+                <div class="mt-5">
                     <div class="row justify-content-between">
                         <div class="col-5 ml-auto">
                             <div class="display-6 text-center mb-3">
@@ -119,6 +119,43 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <div class="row justify-content-between my-3">
+                        <div class="col-5 ml-auto">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <p>Accuracy: 80.25%</p>
+                                        <p>GPU time: 50s</p>
+                                        <p>CPU time: 55s</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto my-auto">
+                            <p class="display-6">vs</p>
+                        </div>
+                        <div class="col-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <p>Accuracy: 77.94%</p>
+                                        <p>GPU time: 40s</p>
+                                        <p>CPU time: 45s</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-primary text-center" role="alert">
+                        50% training speed boost in exchange of 10% decrease in performance
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-auto-fact">
+            <div class="container container-fluid py-5">
+                <div class="display-4 text-center">More about <b>AutoFact</b></div>
             </div>
         </div>
     </body>

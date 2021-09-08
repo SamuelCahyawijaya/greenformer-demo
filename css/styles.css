@@ -30,7 +30,7 @@
 }
 
 .form-auto-fact {
-    background: rgba(0, 0, 0, 0.125);
+    background: rgba(0, 0, 0, 0.0625);
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: .25rem;
 }
@@ -39,4 +39,8 @@
     background: rgba(0, 0, 0, 1);
     font-family: monospace;
     color: white;
+}
+
+.about-auto-fact {
+    background: rgba(0, 0, 0, 0.0625);
 }
