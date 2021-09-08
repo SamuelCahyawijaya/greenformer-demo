@@ -1,0 +1,42 @@
+.get-started {
+    background-image: url('https://wallpapercave.com/wp/wp3720100.jpg');
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-autofact {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.card-autofact {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.demo-auto-fact {
+    margin: auto;
+}
+
+.demo-title-box-auto-fact {
+    background: black;
+    margin-top: -2rem;
+    position: relative;
+    color: white;
+    border: 0.2rem solid rgba(255, 255, 255, 0.25);
+    border-radius: .25rem;
+}
+
+.form-auto-fact {
+    background: rgba(0, 0, 0, 0.125);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: .25rem;
+}
+
+.code-box-auto-fact {
+    background: rgba(0, 0, 0, 1);
+    font-family: monospace;
+    color: white;
+}

@@ -1,1 +1,128 @@
-<h1>Hello AutoFact!</h1>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    </head>
+    <body>
+        <div class="get-started pb-5">
+            <nav class="navbar navbar-autofact">
+                <div class="container container-fluid">
+                    <a class="navbar-brand fw-bold text-light" href="#">AutoFact</a>
+                    <div class="nav">
+                        <a class="nav-link text-light" aria-current="page" href="#">Get Started</a>
+                        <a class="nav-link text-light" href="#">More about AutoFact</a>
+                        <a class="nav-link text-light" href="#">Visit the GitHub</a>
+                        <a class="nav-link text-light" href="#">Cite our work</a>
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <div class="container container-fluid">
+                    <div class="row my-5">
+                        <div class="card card-autofact col-5">
+                            <div class="card-body">
+                                <div class="card-title display-3">
+                                    Get started with <b>AutoFact</b>
+                                </div>
+                                <div class="card-text">
+                                    Making your models smaller, faster, and cheaper. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. [Please fill this with some bacotan, I can't.]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h1>Hello AutoFact!</h1> -->
+                </div>
+            </div>
+        </div>
+        <div class="demo-auto-fact container container-fluid">
+            <div>
+                <div class="display-5 text-center demo-title-box-auto-fact p-2">See <b>AutoFact</b> in action</div>
+                <div class="lead text-center m-4">Change the parameters to your liking and see the magic of <b>AutoFact</b>.</div>
+                <div class="form-auto-fact row mx-1 my-5 p-3">
+                    <div class="col-3">
+                        <label for="task-model-pair" class="form-label">Task-model pair</label>
+                        <select id="task-model-pair" class="form-select" aria-label="Default select example">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-3"></div>
+                    <div class="col-2">
+                        <label for="factorization-style" class="form-label">Factorization style</label>
+                        <select id="factorization-style" class="form-select" aria-label="Default select example">
+                            <option value="1">Pre-training</option>
+                            <option value="2">Post fine-tuning</option>
+                            <option value="3">Context learning</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for="factorization-rank" class="form-label">Factorization rank</label>
+                        <select id="factorization-rank" class="form-select" aria-label="Default select example">
+                            <option value="1">64</option>
+                            <option value="2">128</option>
+                            <option value="3">256</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for="factorization-solver" class="form-label">Factorization solver</label>
+                        <select id="factorization-solver" class="form-select" aria-label="Default select example">
+                            <option value="1">Random</option>
+                            <option value="2">SVD</option>
+                            <option value="3">SNMF</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <div class="row justify-content-between">
+                        <div class="col-5 ml-auto">
+                            <div class="display-6 text-center mb-3">
+                                Code for <b>original</b>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="display-6 text-center mb-3">
+                                Code for <b>AutoFact</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-5 ml-auto">
+                            <div class="card h-100 code-box-auto-fact">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <p>from your_project import load_model, train, predict</p>
+                                        <p>model = load_model()</p>
+                                        <p>model = train(model)</p>
+                                        <p>score = predict(model)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="card h-100 code-box-auto-fact">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <div class="card-text">
+                                            <p>from your_project import load_model, train, predict</p>
+                                            <p>from py_auto_fact import auto_fact</p>
+                                            <p>model = load_model()</p>
+                                            <p>model = train(model)</p>
+                                            <p>model = auto_fact(module=bert_model, rank=64, solver='svd', num_iter=50, submodules=None)</p>
+                                            <p>score = predict(model)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
