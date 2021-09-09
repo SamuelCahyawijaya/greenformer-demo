@@ -1,20 +1,22 @@
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
     <body>
-        <div class="get-started pb-5">
+        <div id="home" class="banner-auto-fact pb-5">
             <nav class="navbar navbar-autofact">
                 <div class="container container-fluid">
                     <a class="navbar-brand fw-bold text-light" href="#">AutoFact</a>
                     <div class="nav">
                         <a class="nav-link text-light" aria-current="page" href="#">Get Started</a>
-                        <a class="nav-link text-light" href="#">More about AutoFact</a>
-                        <a class="nav-link text-light" href="#">Visit the GitHub</a>
-                        <a class="nav-link text-light" href="#">Cite our work</a>
+                        <a class="nav-link text-light" href="#demo">Demo</a>
+                        <a class="nav-link text-light" href="#about">More about AutoFact</a>
+                        <a class="nav-link text-light" href="#contact">Contact us</a>
                     </div>
                 </div>
             </nav>
@@ -32,46 +34,52 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <h1>Hello AutoFact!</h1> -->
                 </div>
             </div>
         </div>
         <div class="demo-auto-fact container container-fluid">
             <div>
-                <div class="display-5 text-center demo-title-box-auto-fact p-2">See <b>AutoFact</b> in action</div>
+                <div id="demo" class="display-5 text-center demo-title-box-auto-fact p-2">See <b>AutoFact</b> in action</div>
                 <div class="lead text-center m-3">Change the parameters to your liking and see the magic of <b>AutoFact</b>.</div>
-                <div class="form-auto-fact row mx-1 my-2 p-3">
-                    <div class="col-3">
+                <div class="form-auto-fact row g-3 mx-1 my-2 py-3">
+                    <div class="col-3 mx-4">
                         <label for="task-model-pair" class="form-label">Task-model pair</label>
-                        <select id="task-model-pair" class="form-select" aria-label="Default select example">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select id="task-model-pair" class="form-select">
+                            <option value="imdb-transformer-scratch">IMDB - Transformer (Scratch)</option>
+                            <option value="imdb-transformer-pretrained">IMDB - Transformer (Pretrained)</option>
+                            <option value="sst-transformer-scratch">SST - Transformer (Scratch)</option>
+                            <option value="sst-transformer-pretrained">SST - Transformer (Pretrained)</option>
+                            <option value="mnli-matched-transformer-scratch">MNLI_matched - Transformer (Scratch)</option>
+                            <option value="mnli-matched-transformer-pretrained">MNLI_matched - Transformer (Pretrained)</option>
+                            <option value="mnli-mismatched-transformer-scratch">MNLI_mismatched - Transformer (Scratch)</option>
+                            <option value="mnli-mismatched-transformer-pretrained">MNLI_mismatched - Transformer (Pretrained)</option>
                         </select>
                     </div>
-                    <div class="col-3"></div>
-                    <div class="col-2">
+                    <div class="col-2"></div>
+                    <div class="col-2 mx-2">
                         <label for="factorization-style" class="form-label">Factorization style</label>
-                        <select id="factorization-style" class="form-select" aria-label="Default select example">
-                            <option value="1">Pre-training</option>
-                            <option value="2">Post fine-tuning</option>
-                            <option value="3">Context learning</option>
+                        <select id="factorization-style" class="form-select">
+                            <option value="pre-training">Pre-training</option>
+                            <option value="post-fine-tuning">Post fine-tuning</option>
+                            <option value="context-learning">Context learning</option>
                         </select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 mx-2">
                         <label for="factorization-rank" class="form-label">Factorization rank</label>
-                        <select id="factorization-rank" class="form-select" aria-label="Default select example">
-                            <option value="1">64</option>
-                            <option value="2">128</option>
-                            <option value="3">256</option>
+                        <select id="factorization-rank" class="form-select">
+                            <option value="64">64</option>
+                            <option value="128">128</option>
+                            <option value="192">192</option>
+                            <option value="256">256</option>
+                            <option value="320">320</option>
                         </select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 mx-2">
                         <label for="factorization-solver" class="form-label">Factorization solver</label>
-                        <select id="factorization-solver" class="form-select" aria-label="Default select example">
-                            <option value="1">Random</option>
-                            <option value="2">SVD</option>
-                            <option value="3">SNMF</option>
+                        <select id="factorization-solver" class="form-select">
+                            <option value="random">Random</option>
+                            <option value="svd">SVD</option>
+                            <option value="snmf">SNMF</option>
                         </select>
                     </div>
                 </div>
@@ -124,10 +132,29 @@
                         <div class="col-5 ml-auto">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <div class="card-text">
-                                        <p>Accuracy: 80.25%</p>
-                                        <p>GPU time: 50s</p>
-                                        <p>CPU time: 55s</p>
+                                    <div class="card-text text-center">
+                                        <div class="column">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="lead">Accuracy</div>
+                                                    <div class="display-6 fw-bold">80.25%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">f1-score</div>
+                                                    <div class="display-6 fw-bold">78.93%</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="lead">GPU time</div>
+                                                    <div class="display-6 fw-bold">50s</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">CPU time</div>
+                                                    <div class="display-6 fw-bold">55s</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -138,10 +165,41 @@
                         <div class="col-5">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <div class="card-text">
-                                        <p>Accuracy: 77.94%</p>
-                                        <p>GPU time: 40s</p>
-                                        <p>CPU time: 45s</p>
+                                    <div class="card-text text-center">
+                                        <div class="column">
+                                            <div class="row">
+                                                <div class="col-1 m-auto display-6 text-danger">
+                                                    <i class="fas fa-arrow-down"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">Accuracy</div>
+                                                    <div class="display-6 fw-bold">77.94%</div>
+                                                </div>
+                                                <div class="col-1 m-auto display-6 text-success">
+                                                    <i class="fas fa-arrow-up"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">f1-score</div>
+                                                    <div class="display-6 fw-bold">75.91%</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1 m-auto display-6 text-danger">
+                                                    <i class="fas fa-arrow-down"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">GPU time</div>
+                                                    <div class="display-6 fw-bold">40s</div>
+                                                </div>
+                                                <div class="col-1 m-auto display-6 text-success">
+                                                    <i class="fas fa-arrow-up"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">CPU time</div>
+                                                    <div class="display-6 fw-bold">45s</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -153,13 +211,33 @@
                 </div>
             </div>
         </div>
-        <div class="about-auto-fact">
+        <div id="about" class="about-auto-fact">
             <div class="container container-fluid py-5">
                 <div class="display-4 text-center">More about <b>AutoFact</b></div>
             </div>
         </div>
+        <div id="contact" class="contact-auto-fact">
+            <div class="container container-fluid py-5">
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <div><i class="fab fa-github my-3 display-6"></i></div>
+                        <div class="lead my-3 fw-bold">GitHub</div>
+                        <div class="my-3">Visit our <a href="#">repository</a> here.</div>
+                    </div>
+                    <div class="col-6">
+                        <div><i class="fas fa-file-alt my-3 display-6"></i></div>
+                        <div class="lead my-3 fw-bold">Cite us</div>
+                        <div class="my-3" style="text-align: justify;">AutoFact has been accepted by AAAI 2022 and you can find the paper <a href="#">here</a>. If you are using any component of AutoFact for research purposes, please cite the following paper:</div>
+                        <pre class="w-100 text-dark">@inproceedings{wilie2020indonlu,<br>    title={IndoNLU: Benchmark and Resources for Evaluating Indonesian Natural Language Understanding},<br>    author={Bryan Wilie and Karissa Vincentio and Genta Indra Winata and Samuel Cahyawijaya and X. Li and Zhi Yuan Lim and S. Soleman and R. Mahendra and Pascale Fung and Syafri Bahar and A. Purwarianti},<br>    booktitle={Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 10th International Joint Conference on Natural Language Processing},<br>    year={2020}<br>}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
-    <footer>
-
+    <footer class="footer-auto-fact text-light">
+        <div class="text-center p-4">
+            © 2021 Copyright:
+        <a class="text-reset fw-bold" href="#">AutoFact</a>
+        </div>
     </footer>
 </html>

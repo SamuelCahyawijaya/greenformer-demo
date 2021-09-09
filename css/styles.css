@@ -1,10 +1,10 @@
-.get-started {
+.banner-auto-fact {
     background-image: url('https://wallpapercave.com/wp/wp3720100.jpg');
     width: 100%;
-    position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    top: 100%;
 }
 
 .navbar-autofact {
@@ -43,4 +43,21 @@
 
 .about-auto-fact {
     background: rgba(0, 0, 0, 0.0625);
+}
+
+pre {
+    padding: 1em;
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.contact-auto-fact {
+    background: #262626;
+    color: white;
+}
+
+.footer-auto-fact {
+    background: rgba(0, 0, 0, 1);
 }
