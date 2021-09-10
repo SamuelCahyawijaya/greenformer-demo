@@ -40,46 +40,49 @@
         <div class="demo-auto-fact container container-fluid">
             <div>
                 <div id="demo" class="display-5 text-center demo-title-box-auto-fact p-2">See <b>AutoFact</b> in action</div>
-                <div class="lead text-center m-3">Change the parameters to your liking and see the magic of <b>AutoFact</b>.</div>
-                <div class="form-auto-fact row g-3 mx-1 my-2 py-3">
-                    <div class="col-3 mx-4">
-                        <label for="task-model-pair" class="form-label">Task-model pair</label>
-                        <select id="task-model-pair" class="form-select">
-                            <option value="imdb-transformer-scratch">IMDB - Transformer (Scratch)</option>
-                            <option value="imdb-transformer-pretrained">IMDB - Transformer (Pretrained)</option>
-                            <option value="sst-transformer-scratch">SST - Transformer (Scratch)</option>
-                            <option value="sst-transformer-pretrained">SST - Transformer (Pretrained)</option>
-                            <option value="mnli-matched-transformer-scratch">MNLI_matched - Transformer (Scratch)</option>
-                            <option value="mnli-matched-transformer-pretrained">MNLI_matched - Transformer (Pretrained)</option>
-                            <option value="mnli-mismatched-transformer-scratch">MNLI_mismatched - Transformer (Scratch)</option>
-                            <option value="mnli-mismatched-transformer-pretrained">MNLI_mismatched - Transformer (Pretrained)</option>
-                        </select>
-                    </div>
-                    <div class="col-2"></div>
-                    <div class="col-2 mx-2">
-                        <label for="factorization-style" class="form-label">Factorization style</label>
-                        <select id="factorization-style" class="form-select">
+                <div class="lead text-center m-3">Change the parameters and see the magic of <b>AutoFact</b></div>
+                <div class="form-auto-fact row g-3 mx-1 my-2 p-3 justify-content-between">
+                    <div class="col-2">
+                        <label for="auto-fact-style" class="form-label mx-1">AutoFact for</label>
+                        <select id="auto-fact-style" class="form-select">
                             <option value="pre-training">Pre-training</option>
                             <option value="post-fine-tuning">Post fine-tuning</option>
-                            <option value="context-learning">Context learning</option>
+                            <option value="context-learning">In-context learning</option>
                         </select>
                     </div>
-                    <div class="col-2 mx-2">
-                        <label for="factorization-rank" class="form-label">Factorization rank</label>
-                        <select id="factorization-rank" class="form-select">
+                    <div class="col-2">
+                        <label for="task" class="form-label mx-1">Task</label>
+                        <select id="task" class="form-select">
+                            <option value="imdb">IMDB</option>
+                            <option value="sst">SST</option>
+                            <option value="mnli-matched">MNLI_matched</option>
+                            <option value="mnli-mismatched">MNLI_mismatched</option>
+                            <option value="cifar-10">CIFAR-10</option>
+                            <option value="cifar-100">CIFAR-100</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for="model" class="form-label mx-1">Model</label>
+                        <select id="model" class="form-select">
+                            <option value="transformer-4l">Transformer-4L</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for="auto-fact-solver" class="form-label mx-1">AutoFact solver</label>
+                        <select id="auto-fact-solver" class="form-select">
+                            <option value="random">Random</option>
+                            <option value="svd">SVD</option>
+                            <option value="snmf">SNMF</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for="auto-fact-rank" class="form-label mx-1">AutoFact rank</label>
+                        <select id="auto-fact-rank" class="form-select">
                             <option value="64">64</option>
                             <option value="128">128</option>
                             <option value="192">192</option>
                             <option value="256">256</option>
                             <option value="320">320</option>
-                        </select>
-                    </div>
-                    <div class="col-2 mx-2">
-                        <label for="factorization-solver" class="form-label">Factorization solver</label>
-                        <select id="factorization-solver" class="form-select">
-                            <option value="random">Random</option>
-                            <option value="svd">SVD</option>
-                            <option value="snmf">SNMF</option>
                         </select>
                     </div>
                 </div>
@@ -221,12 +224,16 @@
             <div class="container container-fluid py-5">
                 <div class="row justify-content-between">
                     <div class="col-3">
-                        <div><i class="fab fa-github my-3 display-6"></i></div>
-                        <div class="lead my-3 fw-bold">GitHub</div>
-                        <div class="my-3">Visit our <a href="https://github.com/SamuelCahyawijaya/py_auto_fact">repository</a> here.</div>
+                        <a href="https://github.com/SamuelCahyawijaya/py_auto_fact" class="text-light" style="text-decoration: none;">
+                            <div class="lead my-3 fw-bold"><i class="fab fa-github my-3 me-3 display-6"></i>GitHub</div>
+                            <div class="my-3">Visit <b>PyAutoFact</b> repository here.</div>
+                        </a>
+                        <a href="https://pypi.org/project/PyAutoFact/" class="text-light" style="text-decoration: none;">
+                            <div class="lead my-3 fw-bold"><i class="fab fa-python mt-5 mb-3 me-3 display-6"></i>PyPi</div>
+                            <div class="my-3">Install <b>PyAutoFact</b> from PyPi.</div>
+                        </a>
                     </div>
                     <div class="col-6">
-                        <div><i class="fas fa-file-alt my-3 display-6"></i></div>
                         <div class="lead my-3 fw-bold">Cite us</div>
                         <div class="my-3" style="text-align: justify;">AutoFact has been accepted by AAAI 2022 and you can find the paper <a href="#">here</a>. If you are using any component of AutoFact for research purposes, please cite the following paper:</div>
                         <pre class="w-100 text-dark">@inproceedings{cahyawijaya2021autofact,<br>    title={AutoFact: Factorization Library for More Efficient Deep Learning Models},<br>    author={Samuel Cahyawijaya and Genta Indra Winata and Holy Lovenia and Bryan Wilie and Wenliang Dai and Etsuko Ishii and Pascale Fung},<br>    booktitle={Proceedings of the 36th AAAI Conference on Artificial Intelligence (Demo Track), 2021},<br>    year={2021}<br>}</pre>
