@@ -459,55 +459,37 @@
             <div class="container container-fluid py-5">
                 <div class="display-4 text-center">More about <b>AutoFact</b></div>
                     <div class="lead text-center m-3">
-                        AutoFact transforms your transformers into a low rank transformers.</br>
-                        On top of that, AutoFact also factorize most of your other deep learning architecture, the same way.
+                        AutoFact is flexible, easy-to-use, and applicable for multiple scenarios.</br>
+                        <b>Gain up to 2x speed increase while maintaining 93% of the performance</b> by utilising AutoFact.</br>
                     </div>
                     <div class="row justify-content-between">
                             <div class="display-6 text-center mb-3">
-                                Low-Rank Transformer Unit
+                                Performance and efficiency trade-off
                             </div>
                             <p align="center">
-                                <img src="img/factorization.png" style="height:250">
+                                <img src="img/Performance comparisons.png" style="height:150"></br></br>
+                                <em>Performance and efficiency trade-off of utilizing AutoFact on:</br>
+                                Left: factorization-by-design, Center: post-training factorization, Right: in-context learning factorization</em>
                             </p>
-                            <div class="lead text-center m-3">
-                                Left: Low-Rank Multi-head Attention (LRMHA), Center: Low-Rank Feed-forward
-(LRFF), and Right: Linear Encoder-Decoder (LED).
-                            </div>
-                    </div> 
-                    <div class="row justify-content-between">
-                        <div class="col-5 ml-auto">
-                            <div class="display-6 text-center mb-3">
-                                The Transformer model architecture
-                            </div>
-                            <p align="center">
-                                <img src="img/original transformers.png" style="height:400">
-                            </p>
-                        </div>
-                        <div class="col-5">
-                            <div class="display-6 text-center mb-3">
-                                Low-Rank Transformer Architecture
-                            </div>
-                            <p align="center">
-                                <img src="img/low rank transformers.png" style="height:400">
-                            </p>
-                        </div>
+                    </div>
+                    <div class="lead text-center m-3">
+                        <b>AutoFact performs decomposition to the weight of linear and convolution layers</b> within the models utilizing factorization solvers like random, SVD, or SMNF, thus <b>replacing the linear layers  into  a  Low-rank  Encoder-Decoder (LED) layer and the convolution layers into a Convolution Encoder-Decoder (CED) layer</b>. AutoFact supports factorization with either a predefined static rank or a dynamic rank across all layers by computing the rank based on a ratio to the maximum rank of the corresponding layer.</br>
                     </div>
                     <div class="row justify-content-between">
-                        <div class="col-5 ml-auto">
-                            <div class="lead text-center m-3">
-                                 The Transformer model architecture introduced by Vaswani et al.
+                            <div class="display-6 text-center mb-3">
+                                Depiction of LED and CED layers
                             </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="lead text-center m-3">
-                                 Similar Transformer model architecture with low-rank multi-head atttentions and low-rank feed-forward components
-                            </div>
-                        </div>
+                            <p align="center">
+                                <img src="img/LEDCED.png" style="height:250"></br></br>
+                                <em>Left: Low-rank  Encoder-Decoder (LED) layer, Right: Convolution Encoder-Decoder (CED) layer.</em>
+                            </p>
                     </div>
                     <div class="lead text-center m-3">
                         Find out more in:</br>
-                        <a href="https://arxiv.org/pdf/1910.13923.pdf">Cahyawijaya, S.; Winata, G. I.; Lovenia, H.; Wilie, B. I.; Dai, W.; Ishii, E.; and Fung, P. 2022. AutoFact: Factorization Library for More Efficient Deep Learning Models.  In 36th AAAI Conference on Artificial Intelligence (Demo Track), AAAI 2022,  Vancouver,  Canada,  Feb 22 March 1,  2020, 6144–6148. IEEE.</a></br>
-                        <a href="https://arxiv.org/pdf/1910.13923.pdf">Winata, G. I.; Cahyawijaya, S.; Lin, Z.; Liu, Z.; and Fung, P. 2020. Lightweight and Efficient End-To-End Speech Recognition Using Low-Rank Transformer.  In 2020 IEEE Inter-national Conference on Acoustics, Speech and Signal Processing,  ICASSP  2020,  Barcelona,  Spain,  May  4-8,  2020,6144–6148. IEEE.</a>
+                        <span style="color:#4169E1"> AutoFact: Factorization Library for More Efficient Deep Learning Models</span></br>
+                        Cahyawijaya, S.; Winata, G. I.; Lovenia, H.; Wilie, B. I.; Dai, W.; Ishii, E.; and Fung, P.</br>
+                        In 36th AAAI Conference on Artificial Intelligence (Demo Track), AAAI 2022, Vancouver, Canada, Feb 22 March 1, 2022</br>
+                        More details: Paper to be linked in the near future</br>
                     </div>
                 </div>
             </div>
