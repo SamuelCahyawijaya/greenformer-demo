@@ -8,6 +8,189 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+        <script src="sample.js"></script>
+        <!-- obj_sample -->
+        <script>
+            $(document).ready(function() {
+                refreshSample(0);
+            });
+
+            var auto_fact_style = Object.keys(obj_sample)[0]
+            var task = Object.keys(obj_sample[auto_fact_style])[0]
+            var model = Object.keys(obj_sample[auto_fact_style][task])[0]
+            var auto_fact_solver = Object.keys(obj_sample[auto_fact_style][task][model])[0]
+            var auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])[0]
+            
+            var acc_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["acc"]
+            var f1_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["f1"]
+            var gpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["gpu_time"]
+            var cpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["cpu_time"]
+
+            var acc_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["acc"]
+            var f1_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["f1"]
+            var gpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["gpu_time"]
+            var cpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["cpu_time"]
+
+            function refreshSample(level_tree){
+                if(level_tree == 1){
+                    var auto_fact_style_select = document.getElementById('auto-fact-style');
+                    auto_fact_style = auto_fact_style_select.value;
+
+                    task = Object.keys(obj_sample[auto_fact_style])[0]
+                    model = Object.keys(obj_sample[auto_fact_style][task])[0]
+                    auto_fact_solver = Object.keys(obj_sample[auto_fact_style][task][model])[0]
+                    auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])[0]
+                } else if(level_tree == 2){
+                    var task_select = document.getElementById('task');
+                    task = task_select.value;
+
+                    model = Object.keys(obj_sample[auto_fact_style][task])[0]
+                    auto_fact_solver = Object.keys(obj_sample[auto_fact_style][task][model])[0]
+                    auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])[0]
+                } else if(level_tree == 3){
+                    var model_select = document.getElementById('model');
+                    model = model_select.value;
+
+                    auto_fact_solver = Object.keys(obj_sample[auto_fact_style][task][model])[0]
+                    auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])[0]
+                } else if(level_tree == 4){
+                    var auto_fact_solver_select = document.getElementById('auto-fact-solver');
+                    auto_fact_solver = auto_fact_solver_select.value;
+
+                    auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])[0]
+                } else if(level_tree == 5){
+                    auto_fact_rank_select = document.getElementById('auto-fact-rank');
+                    auto_fact_rank = auto_fact_rank_select.value;
+                }
+                acc_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["acc"]
+                f1_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["f1"]
+                gpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["gpu_time"]
+                cpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["cpu_time"]
+
+                acc_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["acc"]
+                f1_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["f1"]
+                gpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["gpu_time"]
+                cpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["cpu_time"]
+
+                rank_span = document.getElementById("rank");
+                rank_span.textContent = auto_fact_rank
+
+                solver_span = document.getElementById("solver");
+                solver_span.textContent = auto_fact_solver
+
+                acc_ori_span = document.getElementById("acc_ori");
+                acc_ori_span.textContent = acc_ori
+                f1_ori_span = document.getElementById("f1_ori");
+                f1_ori_span.textContent = f1_ori
+                gpu_ori_span = document.getElementById("gpu_ori");
+                gpu_ori_span.textContent = gpu_ori
+                cpu_ori_span = document.getElementById("cpu_ori");
+                cpu_ori_span.textContent = cpu_ori
+
+                acc_fact_span = document.getElementById("acc_fact");
+                acc_fact_span.textContent = acc_fact
+                f1_fact_span = document.getElementById("f1_fact");
+                f1_fact_span.textContent = f1_fact
+                gpu_fact_span = document.getElementById("gpu_fact");
+                gpu_fact_span.textContent = gpu_fact
+                cpu_fact_span = document.getElementById("cpu_fact");
+                cpu_fact_span.textContent = cpu_fact
+
+                console.log(gpu_fact)
+
+                if(level_tree < 1){
+                    opt_auto_fact = Object.keys(obj_sample)
+                    console.log(opt_auto_fact)
+                    var auto_fact_style_select = document.getElementById('auto-fact-style');
+                    while (auto_fact_style_select.firstChild) {
+                        auto_fact_style_select.removeChild(auto_fact_style_select.firstChild);
+                    }
+                    for (let i=0; i<opt_auto_fact.length; i++){
+                        var o = document.createElement("option");
+                        o.value = opt_auto_fact[i];
+                        o.text = opt_auto_fact[i];
+                        auto_fact_style_select.appendChild(o);
+                    }
+                }
+                if(level_tree < 2){
+                    opt_task = Object.keys(obj_sample[auto_fact_style])
+                    console.log(opt_task)
+                    var task_select = document.getElementById('task');
+                    while (task_select.firstChild) {
+                        task_select.removeChild(task_select.firstChild);
+                    }
+                    for (let i=0; i<opt_task.length; i++){
+                        var o = document.createElement("option");
+                        o.value = opt_task[i];
+                        o.text = opt_task[i];
+                        task_select.appendChild(o);
+                    }
+                }
+                if(level_tree < 3){
+                    opt_model = Object.keys(obj_sample[auto_fact_style][task])
+                    console.log(opt_model)
+                    var model_select = document.getElementById('model');
+                    while (model_select.firstChild) {
+                        model_select.removeChild(model_select.firstChild);
+                    }
+                    for (let i=0; i<opt_model.length; i++){
+                        var o = document.createElement("option");
+                        o.value = opt_model[i];
+                        o.text = opt_model[i];
+                        model_select.appendChild(o);
+                    }
+                }
+                if(level_tree < 4){
+                    opt_auto_fact_solver = Object.keys(obj_sample[auto_fact_style][task][model])
+                    console.log(opt_auto_fact_solver)
+                    var auto_fact_solver_select = document.getElementById('auto-fact-solver');
+                    while (auto_fact_solver_select.firstChild) {
+                        auto_fact_solver_select.removeChild(auto_fact_solver_select.firstChild);
+                    }
+                    for (let i=0; i<opt_auto_fact_solver.length; i++){
+                        var o = document.createElement("option");
+                        o.value = opt_auto_fact_solver[i];
+                        o.text = opt_auto_fact_solver[i];
+                        auto_fact_solver_select.appendChild(o);
+                    }
+                }
+                if(level_tree < 5){
+                    opt_auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])
+                    console.log(opt_auto_fact_rank)
+                    var auto_fact_rank_select = document.getElementById('auto-fact-rank');
+                    while (auto_fact_rank_select.firstChild) {
+                        auto_fact_rank_select.removeChild(auto_fact_rank_select.firstChild);
+                    }
+                    for (let i=0; i<opt_auto_fact_rank.length; i++){
+                        if(opt_auto_fact_rank[i] != -1){
+                            var o = document.createElement("option");
+                            o.value = opt_auto_fact_rank[i];
+                            o.text = opt_auto_fact_rank[i];
+                            auto_fact_rank_select.appendChild(o);
+                        }
+                    }
+                }
+            }
+
+            function updateResult(){
+                // get settings
+                var auto_fact_style_select = document.getElementById('auto-fact-style');
+                var auto_fact_style_value = auto_fact_style_select.options[auto_fact_style_select.selectedIndex].value;
+                
+                var task_select = document.getElementById('task');
+                var task_value = task_select.options[task_select.selectedIndex].value;
+
+                var model_select = document.getElementById('model');
+                var model_value = model_select.options[model_select.selectedIndex].value;
+
+                var auto_fact_solver_select = document.getElementById('auto-fact-solver');
+                var auto_fact_solver_value = auto_fact_solver_select.options[auto_fact_solver_select.selectedIndex].value;
+
+                var auto_fact_rank_select = document.getElementById('auto-fact-rank');
+                var auto_fact_rank_value = auto_fact_rank_select.options[auto_fact_rank_select.selectedIndex].value;
+            }
+        </script>
+
         <div id="home" class="banner-auto-fact pb-5">
             <nav class="navbar navbar-autofact">
                 <div class="container container-fluid">
@@ -44,7 +227,7 @@
                 <div class="form-auto-fact row g-3 mx-1 my-2 p-3 justify-content-between">
                     <div class="col-2">
                         <label for="auto-fact-style" class="form-label mx-1">AutoFact for</label>
-                        <select id="auto-fact-style" class="form-select">
+                        <select id="auto-fact-style" class="form-select" onchange=refreshSample(1)>
                             <option value="pre-training">Pre-training</option>
                             <option value="post-fine-tuning">Post fine-tuning</option>
                             <option value="context-learning">In-context learning</option>
@@ -52,7 +235,7 @@
                     </div>
                     <div class="col-2">
                         <label for="task" class="form-label mx-1">Task</label>
-                        <select id="task" class="form-select">
+                        <select id="task" class="form-select" onchange=refreshSample(2)>
                             <option value="imdb">IMDB</option>
                             <option value="sst">SST</option>
                             <option value="mnli-matched">MNLI_matched</option>
@@ -63,13 +246,13 @@
                     </div>
                     <div class="col-2">
                         <label for="model" class="form-label mx-1">Model</label>
-                        <select id="model" class="form-select">
+                        <select id="model" class="form-select" onchange=refreshSample(3)>
                             <option value="transformer-4l">Transformer-4L</option>
                         </select>
                     </div>
                     <div class="col-2">
                         <label for="auto-fact-solver" class="form-label mx-1">AutoFact solver</label>
-                        <select id="auto-fact-solver" class="form-select">
+                        <select id="auto-fact-solver" class="form-select" onchange=refreshSample(4)>
                             <option value="random">Random</option>
                             <option value="svd">SVD</option>
                             <option value="snmf">SNMF</option>
@@ -77,7 +260,7 @@
                     </div>
                     <div class="col-2">
                         <label for="auto-fact-rank" class="form-label mx-1">AutoFact rank</label>
-                        <select id="auto-fact-rank" class="form-select">
+                        <select id="auto-fact-rank" class="form-select" onchange=refreshSample(5)>
                             <option value="64">64</option>
                             <option value="128">128</option>
                             <option value="192">192</option>
@@ -104,10 +287,10 @@
                             <div class="card h-100 code-box-auto-fact">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <p>from your_project import load_model, train, predict</p>
-                                        <p>model = load_model()</p>
-                                        <p>model = train(model)</p>
-                                        <p>score = predict(model)</p>
+                                        <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span></p>
+                                        <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>()</p>
+                                        <p>model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
+                                        <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,12 +300,12 @@
                                 <div class="card-body">
                                     <div class="card-text">
                                         <div class="card-text">
-                                            <p>from your_project import load_model, train, predict</p>
-                                            <p>from py_auto_fact import auto_fact</p>
-                                            <p>model = load_model()</p>
-                                            <p>model = train(model)</p>
-                                            <p>model = auto_fact(module=bert_model, rank=64, solver='svd', num_iter=50, submodules=None)</p>
-                                            <p>score = predict(model)</p>
+                                            <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span></p>
+                                            <p>from <span style="color:rgb(211, 238, 61)">py_auto_fact</span> import <span style="color:orange">auto_fact</span></p>
+                                            <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>()</p>
+                                            <p>model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
+                                            <p id="autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(211, 238, 61)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
+                                            <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -140,21 +323,21 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="lead">Accuracy</div>
-                                                    <div class="display-6 fw-bold">80.25%</div>
+                                                    <div id="acc_ori" class="display-6 fw-bold">80.25%</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">f1-score</div>
-                                                    <div class="display-6 fw-bold">78.93%</div>
+                                                    <div id="f1_ori" class="display-6 fw-bold">78.93%</div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="lead">GPU time</div>
-                                                    <div class="display-6 fw-bold">50s</div>
+                                                    <div id="gpu_ori" class="display-6 fw-bold">50s</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">CPU time</div>
-                                                    <div class="display-6 fw-bold">55s</div>
+                                                    <div id="cpu_ori" class="display-6 fw-bold">55s</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -176,14 +359,14 @@
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">Accuracy</div>
-                                                    <div class="display-6 fw-bold">77.94%</div>
+                                                    <div id="acc_fact" class="display-6 fw-bold">77.94%</div>
                                                 </div>
                                                 <div class="col-1 m-auto display-6 text-success">
                                                     <i class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">f1-score</div>
-                                                    <div class="display-6 fw-bold">75.91%</div>
+                                                    <div id="f1_fact" class="display-6 fw-bold">75.91%</div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -192,14 +375,14 @@
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">GPU time</div>
-                                                    <div class="display-6 fw-bold">40s</div>
+                                                    <div id="gpu_fact" class="display-6 fw-bold">40s</div>
                                                 </div>
                                                 <div class="col-1 m-auto display-6 text-success">
                                                     <i class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">CPU time</div>
-                                                    <div class="display-6 fw-bold">45s</div>
+                                                    <div id="cpu_fact" class="display-6 fw-bold">45s</div>
                                                 </div>
                                             </div>
                                         </div>
