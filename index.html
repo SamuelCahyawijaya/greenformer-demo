@@ -96,6 +96,52 @@
                 cpu_fact_span = document.getElementById("cpu_fact");
                 cpu_fact_span.textContent = cpu_fact
 
+                $("#down_acc").hide()
+                $("#up_acc").hide()
+                if(acc_ori < acc_fact){
+                    $("#down_acc").hide()
+                    $("#up_acc").show()
+                } else if(acc_ori > acc_fact){
+                    $("#down_acc").show()
+                    $("#up_acc").hide()
+                }
+
+                $("#down_f1").hide()
+                $("#up_f1").hide()
+                if(f1_ori < f1_fact){
+                    $("#down_f1").hide()
+                    $("#up_f1").show()
+                } else if(f1_ori > f1_fact){
+                    $("#down_f1").show()
+                    $("#up_f1").hide()
+                }
+
+                $("#down_gpu").hide()
+                $("#up_gpu").hide()
+                if(gpu_ori > gpu_fact){
+                    $("#down_gpu").hide()
+                    $("#up_gpu").show()
+                } else if(gpu_ori < gpu_fact){
+                    $("#down_gpu").show()
+                    $("#up_gpu").hide()
+                }
+
+                $("#down_cpu").hide()
+                $("#up_cpu").hide()
+                if(cpu_ori > cpu_fact){
+                    $("#down_cpu").hide()
+                    $("#up_cpu").show()
+                } else if(cpu_ori < cpu_fact){
+                    $("#down_cpu").show()
+                    $("#up_cpu").hide()
+                }
+
+                speed_margin_span = document.getElementById("speed_margin");
+                speed_margin_span.textContent = (gpu_ori - gpu_fact) * 100 / gpu_ori + "%"
+
+                performance_margin_span = document.getElementById("performance_margin");
+                performance_margin_span.textContent = (acc_ori - acc_fact) * 100 / gpu_ori + "%"
+
                 console.log(gpu_fact)
 
                 if(level_tree < 1){
@@ -355,14 +401,20 @@
                                         <div class="column">
                                             <div class="row">
                                                 <div class="col-1 m-auto display-6 text-danger">
-                                                    <i class="fas fa-arrow-down"></i>
+                                                    <i id="down_acc" class="fas fa-arrow-down"></i>
+                                                </div>    
+                                                <div class="col-1 m-auto display-6 text-success">
+                                                    <i id="up_acc" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">Accuracy</div>
                                                     <div id="acc_fact" class="display-6 fw-bold">77.94%</div>
                                                 </div>
+                                                <div class="col-1 m-auto display-6 text-danger">
+                                                    <i id="down_f1" class="fas fa-arrow-down"></i>
+                                                </div>    
                                                 <div class="col-1 m-auto display-6 text-success">
-                                                    <i class="fas fa-arrow-up"></i>
+                                                    <i id="up_f1" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">f1-score</div>
@@ -371,14 +423,20 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-1 m-auto display-6 text-danger">
-                                                    <i class="fas fa-arrow-down"></i>
+                                                    <i id="down_gpu" class="fas fa-arrow-down"></i>
+                                                </div>    
+                                                <div class="col-1 m-auto display-6 text-success">
+                                                    <i id="up_gpu" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">GPU time</div>
                                                     <div id="gpu_fact" class="display-6 fw-bold">40s</div>
                                                 </div>
+                                                <div class="col-1 m-auto display-6 text-danger">
+                                                    <i id="down_cpu" class="fas fa-arrow-down"></i>
+                                                </div>    
                                                 <div class="col-1 m-auto display-6 text-success">
-                                                    <i class="fas fa-arrow-up"></i>
+                                                    <i id="up_cpu" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">CPU time</div>
@@ -392,7 +450,7 @@
                         </div>
                     </div>
                     <div class="alert alert-primary text-center" role="alert">
-                        50% training speed boost in exchange of 10% decrease in performance
+                        <span id="speed_margin" style="font-size: 22px;">50%</span> training GPU speed boost in exchange of <span id="performance_margin" style="font-size: 22px;">10%</span> decrease in accuracy performance
                     </div>
                 </div>
             </div>
