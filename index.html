@@ -98,11 +98,13 @@
 
                 acc_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["acc"]
                 memory_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["memory"]
+                param_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["parameter"]
                 gpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["gpu_time"]
                 cpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["cpu_time"]
 
                 acc_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["acc"]
                 memory_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["memory"]
+                param_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["parameter"]
                 gpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["gpu_time"]
                 cpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["cpu_time"]
 
@@ -118,6 +120,8 @@
                 acc_ori_span.textContent = acc_ori
                 memory_ori_span = document.getElementById("memory_ori");
                 memory_ori_span.textContent = memory_ori
+                param_ori_span = document.getElementById("param_ori");
+                param_ori_span.textContent = param_ori
                 gpu_ori_span = document.getElementById("gpu_ori");
                 gpu_ori_span.textContent = gpu_ori
                 cpu_ori_span = document.getElementById("cpu_ori");
@@ -127,6 +131,8 @@
                 acc_fact_span.textContent = acc_fact
                 memory_fact_span = document.getElementById("memory_fact");
                 memory_fact_span.textContent = memory_fact
+                param_fact_span = document.getElementById("param_fact");
+                param_fact_span.textContent = param_fact
                 gpu_fact_span = document.getElementById("gpu_fact");
                 gpu_fact_span.textContent = gpu_fact
                 cpu_fact_span = document.getElementById("cpu_fact");
@@ -144,12 +150,22 @@
 
                 $("#down_memory").hide()
                 $("#up_memory").hide()
-                if(memory_ori < memory_fact){
+                if(memory_ori > memory_fact){
                     $("#down_memory").hide()
                     $("#up_memory").show()
-                } else if(memory_ori > memory_fact){
+                } else if(memory_ori < memory_fact){
                     $("#down_memory").show()
                     $("#up_memory").hide()
+                }
+
+                $("#down_param").hide()
+                $("#up_param").hide()
+                if(param_ori > param_fact){
+                    $("#down_param").hide()
+                    $("#up_param").show()
+                } else if(param_ori < param_fact){
+                    $("#down_param").show()
+                    $("#up_param").hide()
                 }
 
                 $("#down_gpu").hide()
@@ -427,10 +443,6 @@
                                                     <div class="lead">Accuracy</div>
                                                     <div id="acc_ori" class="display-6 fw-bold">80.25%</div>
                                                 </div>
-                                                <div class="col">
-                                                    <div class="lead">Memory (MB)</div>
-                                                    <div id="memory_ori" class="display-6 fw-bold">100</div>
-                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
@@ -440,6 +452,16 @@
                                                 <div class="col">
                                                     <div class="lead">CPU time (ms)</div>
                                                     <div id="cpu_ori" class="display-6 fw-bold">55s</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="lead">Memory (MB)</div>
+                                                    <div id="memory_ori" class="display-6 fw-bold">100</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">Parameters (mil)</div>
+                                                    <div id="param_ori" class="display-6 fw-bold">43</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -455,48 +477,54 @@
                                 <div class="card-body">
                                     <div class="card-text text-center">
                                         <div class="column">
-                                            <div class="row">
-                                                <div class="col-1 m-auto display-6 text-danger">
-                                                    <i id="down_acc" class="fas fa-arrow-down"></i>
-                                                </div>    
-                                                <div class="col-1 m-auto display-6 text-success">
-                                                    <i id="up_acc" class="fas fa-arrow-up"></i>
+                                            <div class="row"> 
+                                                <div class="col m-auto display-6" style="text-align: end;">
+                                                    <i id="down_acc" class="fas fa-thumbs-down text-danger"></i>
+                                                    <i id="up_acc" class="fas fa-thumbs-up text-success"></i>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col" style="text-align: start;">
                                                     <div class="lead">Accuracy</div>
                                                     <div id="acc_fact" class="display-6 fw-bold">77.94%</div>
                                                 </div>
-                                                <div class="col-1 m-auto display-6 text-danger">
-                                                    <i id="down_memory" class="fas fa-arrow-down"></i>
-                                                </div>    
-                                                <div class="col-1 m-auto display-6 text-success">
-                                                    <i id="up_memory" class="fas fa-arrow-up"></i>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="lead">Memory (MB)</div>
-                                                    <div id="memory_fact" class="display-6 fw-bold">100</div>
-                                                </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-1 m-auto display-6 text-danger">
-                                                    <i id="down_gpu" class="fas fa-arrow-down"></i>
-                                                </div>    
-                                                <div class="col-1 m-auto display-6 text-success">
-                                                    <i id="up_gpu" class="fas fa-arrow-up"></i>
+                                                <div class="col-1 m-auto display-6"></div>    
+                                                <div class="col-1 m-auto display-6">
+                                                    <i id="down_gpu" class="fas fa-thumbs-down text-danger"></i>
+                                                    <i id="up_gpu" class="fas fa-thumbs-up text-success"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">GPU time (ms)</div>
                                                     <div id="gpu_fact" class="display-6 fw-bold">40s</div>
                                                 </div>
-                                                <div class="col-1 m-auto display-6 text-danger">
-                                                    <i id="down_cpu" class="fas fa-arrow-down"></i>
-                                                </div>    
-                                                <div class="col-1 m-auto display-6 text-success">
-                                                    <i id="up_cpu" class="fas fa-arrow-up"></i>
+                                                <div class="col-1 m-auto display-6"></div>    
+                                                <div class="col-1 m-auto display-6">
+                                                    <i id="down_cpu" class="fas fa-thumbs-down text-danger"></i>
+                                                    <i id="up_cpu" class="fas fa-thumbs-up text-success"></i>
                                                 </div>
                                                 <div class="col">
                                                     <div class="lead">CPU time (ms)</div>
                                                     <div id="cpu_fact" class="display-6 fw-bold">45s</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1 m-auto display-6 text-danger"></div>    
+                                                <div class="col-1 m-auto display-6">
+                                                    <i id="down_memory" class="fas fa-thumbs-down text-danger"></i>
+                                                    <i id="up_memory" class="fas fa-thumbs-up text-success"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">Memory (MB)</div>
+                                                    <div id="memory_fact" class="display-6 fw-bold">100</div>
+                                                </div>
+                                                <div class="col-1 m-auto display-6"></div>    
+                                                <div class="col-1 m-auto display-6">
+                                                    <i id="down_param" class="fas fa-thumbs-down text-danger"></i>
+                                                    <i id="up_param" class="fas fa-thumbs-up text-success"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="lead">Parameters (mil)</div>
+                                                    <div id="param_fact" class="display-6 fw-bold">43</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -505,7 +533,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-primary text-center" role="alert">
+                    <div class="alert alert-primary text-center align-middle" role="alert">
                         <span id="speed_margin" style="font-size: 28px;">50%</span> training GPU speed <span id=speed_sign>boost</span> <span id="trade-off">in exchange of</span> <span id="performance_margin" style="font-size: 28px;">10%</span> <span id="performance_sign">decrease</span> in accuracy performance
                     </div>
                 </div>
