@@ -322,15 +322,20 @@
             <div>
                 <div class="container container-fluid">
                     <div class="row my-5">
-                        <div class="card card-autofact col-5">
+                        <!-- <div class="col-1"></div> -->
+                        <div class="card card-autofact col-6" style="margin-left: 20px;">
                             <div class="card-body">
                                 <div class="card-title display-3">
                                     Introducing <b>AutoFact</b>
                                 </div>
-                                <div class="card-text">
+                                <div class="card-text" style="padding-top: 3%; font-size: 1.4em;">
                                     Easily factorize your deep learning model using the low-rank matrix factorization method to enable faster training and inference time on most of the deep learning model architectures. Use this library to robustly make your models smaller, faster, and cheaper in all runs.
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="card col-4" style="background: #00000000; border: none; margin-left: -40px;">
+                            <img src="img/code.png"/>
                         </div>
                     </div>
                 </div>
@@ -546,6 +551,7 @@
                         AutoFact is flexible, easy-to-use, and applicable for multiple scenarios.</br>
                         <b>Gain up to 2x speed increase while maintaining 93% of the performance</b> by utilising AutoFact.</br>
                     </div>
+                    <br/><br/>
                     <div class="row justify-content-between">
                             <div class="display-6 text-center mb-3">
                                 Performance and efficiency trade-off
@@ -559,15 +565,23 @@
                     <div class="lead text-center m-3">
                         <b>AutoFact performs decomposition to the weight of linear and convolution layers</b> within the models utilizing factorization solvers like random, SVD, or SMNF, thus <b>replacing the linear layers  into  a  Low-rank  Encoder-Decoder (LED) layer and the convolution layers into a Convolution Encoder-Decoder (CED) layer</b>. AutoFact supports factorization with either a predefined static rank or dynamic ranks across all layers by computing the rank based on a ratio to the maximum rank of the corresponding layer.</br>
                     </div>
+                    <br/><br/>
                     <div class="row justify-content-between">
                             <div class="display-6 text-center mb-3">
-                                Depiction of LED and CED layers
+                                LED and CED layers in action
                             </div>
                             <p align="center">
-                                <img src="img/LEDCED.png" style="height:250"></br></br>
-                                <em>Left: Low-rank  Encoder-Decoder (LED) layer, Right: Convolution Encoder-Decoder (CED) layer.</em>
+                                <div class="row" style="width: 100%; text-align: center;">
+                                    <span class="col-1"></span>
+                                    <span class="col-4" style="padding-left: 5%;"><img src="img/LED.gif" height="350" /></span>
+                                    <span class="col-2"></span>
+                                    <span class="col-5"><img src="img/CED.gif" height="350" /></span>
+                                </div>
+                                </br></br>
                             </p>
+                            <em style="text-align: center;">Left: Low-rank  Encoder-Decoder (LED) layer, Right: Convolution Encoder-Decoder (CED) layer.</em>
                     </div>
+                    <br/><br/>
                     <div class="lead text-center m-3">
                         <b>Find out even more in:</b></br>
                         <span style="color:#4169E1"> AutoFact: Factorization Library for More Efficient Deep Learning Models</span></br>
