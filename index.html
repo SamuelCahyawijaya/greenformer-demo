@@ -22,19 +22,52 @@
             var auto_fact_rank = Object.keys(obj_sample[auto_fact_style][task][model][auto_fact_solver])[0]
             
             var acc_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["acc"]
-            var f1_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["f1"]
+            var memory_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["memory"]
             var gpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["gpu_time"]
             var cpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["cpu_time"]
 
             var acc_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["acc"]
-            var f1_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["f1"]
+            var memory_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["memory"]
             var gpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["gpu_time"]
             var cpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["cpu_time"]
+            var mem_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["memory"]
+            var param_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["parameter"]
 
             function refreshSample(level_tree){
+                if (level_tree == 0){
+                    $("#pre_training_autofact_model").show()
+                    $(".training_phase").show()
+                    $("#post_training_autofact_model").hide()
+                    $("#submodule_import").hide()
+                    $("#submodule_call").hide()
+                }
+
                 if(level_tree == 1){
                     var auto_fact_style_select = document.getElementById('auto-fact-style');
                     auto_fact_style = auto_fact_style_select.value;
+
+                    if (auto_fact_style == "Factorization-by-design"){
+                        $("#pre_training_autofact_model").show()
+                        $(".training_phase").show()
+                        $("#post_training_autofact_model").hide()
+                        $("#submodule_import").hide()
+                        $("#submodule_call").hide()
+                        $("#submodule_param").text("None")
+                    } else if (auto_fact_style == "Post-training"){
+                        $("#pre_training_autofact_model").hide()
+                        $(".training_phase").show()
+                        $("#post_training_autofact_model").show()
+                        $("#submodule_import").show()
+                        $("#submodule_call").show()
+                        $("#submodule_param").text("submodules")
+                    } else if (auto_fact_style == "In-context Learning"){
+                        $("#pre_training_autofact_model").hide()
+                        $(".training_phase").hide()
+                        $("#post_training_autofact_model").show()
+                        $("#submodule_import").show()
+                        $("#submodule_call").show()
+                        $("#submodule_param").text("submodules")
+                    }
 
                     task = Object.keys(obj_sample[auto_fact_style])[0]
                     model = Object.keys(obj_sample[auto_fact_style][task])[0]
@@ -62,26 +95,29 @@
                     auto_fact_rank_select = document.getElementById('auto-fact-rank');
                     auto_fact_rank = auto_fact_rank_select.value;
                 }
+
                 acc_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["acc"]
-                f1_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["f1"]
+                memory_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["memory"]
                 gpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["gpu_time"]
                 cpu_ori = obj_sample[auto_fact_style][task][model][auto_fact_solver][-1]["cpu_time"]
 
                 acc_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["acc"]
-                f1_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["f1"]
+                memory_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["memory"]
                 gpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["gpu_time"]
                 cpu_fact = obj_sample[auto_fact_style][task][model][auto_fact_solver][auto_fact_rank]["cpu_time"]
 
-                rank_span = document.getElementById("rank");
-                rank_span.textContent = auto_fact_rank
+                $("#rank_pre").text(auto_fact_rank);
+                $("#rank_post").text(auto_fact_rank);
+
+                $(".model_type").text("'" + model.toLowerCase() + "'")
 
                 solver_span = document.getElementById("solver");
-                solver_span.textContent = auto_fact_solver
+                solver_span.textContent = "'" + auto_fact_solver.toLowerCase() + "'"
 
                 acc_ori_span = document.getElementById("acc_ori");
                 acc_ori_span.textContent = acc_ori
-                f1_ori_span = document.getElementById("f1_ori");
-                f1_ori_span.textContent = f1_ori
+                memory_ori_span = document.getElementById("memory_ori");
+                memory_ori_span.textContent = memory_ori
                 gpu_ori_span = document.getElementById("gpu_ori");
                 gpu_ori_span.textContent = gpu_ori
                 cpu_ori_span = document.getElementById("cpu_ori");
@@ -89,8 +125,8 @@
 
                 acc_fact_span = document.getElementById("acc_fact");
                 acc_fact_span.textContent = acc_fact
-                f1_fact_span = document.getElementById("f1_fact");
-                f1_fact_span.textContent = f1_fact
+                memory_fact_span = document.getElementById("memory_fact");
+                memory_fact_span.textContent = memory_fact
                 gpu_fact_span = document.getElementById("gpu_fact");
                 gpu_fact_span.textContent = gpu_fact
                 cpu_fact_span = document.getElementById("cpu_fact");
@@ -106,14 +142,14 @@
                     $("#up_acc").hide()
                 }
 
-                $("#down_f1").hide()
-                $("#up_f1").hide()
-                if(f1_ori < f1_fact){
-                    $("#down_f1").hide()
-                    $("#up_f1").show()
-                } else if(f1_ori > f1_fact){
-                    $("#down_f1").show()
-                    $("#up_f1").hide()
+                $("#down_memory").hide()
+                $("#up_memory").hide()
+                if(memory_ori < memory_fact){
+                    $("#down_memory").hide()
+                    $("#up_memory").show()
+                } else if(memory_ori > memory_fact){
+                    $("#down_memory").show()
+                    $("#up_memory").hide()
                 }
 
                 $("#down_gpu").hide()
@@ -334,8 +370,8 @@
                                 <div class="card-body">
                                     <div class="card-text">
                                         <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span></p>
-                                        <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>()</p>
-                                        <p>model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
+                                        <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(211, 238, 61)">'transformer'</span>)</p>
+                                        <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
                                         <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
                                     </div>
                                 </div>
@@ -346,11 +382,13 @@
                                 <div class="card-body">
                                     <div class="card-text">
                                         <div class="card-text">
-                                            <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span></p>
+                                            <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span><span id="submodule_import">, <span style="color:rgb(255, 241, 161)">get_submodules</span></span></p>
                                             <p>from <span style="color:rgb(211, 238, 61)">py_auto_fact</span> import <span style="color:orange">auto_fact</span></p>
-                                            <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>()</p>
-                                            <p>model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
-                                            <p id="autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(211, 238, 61)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
+                                            <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(211, 238, 61)">'transformer'</span>)</p>
+                                            <p id="pre_training_autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_pre" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span style="color:rgb(211, 238, 61)">'random'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
+                                            <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
+                                            <p id="submodule_call">submodules = <span style="color:rgb(255, 241, 161)">get_submodules</span>(<span style="color:rgb(211, 238, 61)">model</span>,<span class="model_type" style="color:rgb(90, 223, 247)">'bert-base'</span>)</p>
+                                            <p id="post_training_autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_post" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(211, 238, 61)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span id="submodule_param" style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
                                             <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
                                         </div>
                                     </div>
@@ -372,17 +410,17 @@
                                                     <div id="acc_ori" class="display-6 fw-bold">80.25%</div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="lead">f1-score</div>
-                                                    <div id="f1_ori" class="display-6 fw-bold">78.93%</div>
+                                                    <div class="lead">Memory (MB)</div>
+                                                    <div id="memory_ori" class="display-6 fw-bold">100</div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="lead">GPU time</div>
+                                                    <div class="lead">GPU time (ms)</div>
                                                     <div id="gpu_ori" class="display-6 fw-bold">50s</div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="lead">CPU time</div>
+                                                    <div class="lead">CPU time (ms)</div>
                                                     <div id="cpu_ori" class="display-6 fw-bold">55s</div>
                                                 </div>
                                             </div>
@@ -411,14 +449,14 @@
                                                     <div id="acc_fact" class="display-6 fw-bold">77.94%</div>
                                                 </div>
                                                 <div class="col-1 m-auto display-6 text-danger">
-                                                    <i id="down_f1" class="fas fa-arrow-down"></i>
+                                                    <i id="down_memory" class="fas fa-arrow-down"></i>
                                                 </div>    
                                                 <div class="col-1 m-auto display-6 text-success">
-                                                    <i id="up_f1" class="fas fa-arrow-up"></i>
+                                                    <i id="up_memory" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="lead">f1-score</div>
-                                                    <div id="f1_fact" class="display-6 fw-bold">75.91%</div>
+                                                    <div class="lead">Memory (MB)</div>
+                                                    <div id="memory_fact" class="display-6 fw-bold">100</div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -429,7 +467,7 @@
                                                     <i id="up_gpu" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="lead">GPU time</div>
+                                                    <div class="lead">GPU time (ms)</div>
                                                     <div id="gpu_fact" class="display-6 fw-bold">40s</div>
                                                 </div>
                                                 <div class="col-1 m-auto display-6 text-danger">
@@ -439,7 +477,7 @@
                                                     <i id="up_cpu" class="fas fa-arrow-up"></i>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="lead">CPU time</div>
+                                                    <div class="lead">CPU time (ms)</div>
                                                     <div id="cpu_fact" class="display-6 fw-bold">45s</div>
                                                 </div>
                                             </div>

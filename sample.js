@@ -4,46 +4,46 @@ var obj_sample = {
             "Transformer": {
                 "Random": {
                     "64": {
-                        "acc": 0.84,
+                        "acc": 84.2,
                         "cpu_time": 482.23,
-                        "memory": 347.48,
+                        "memory": 347,
                         "gpu_time": 44.66,
-                        "parameter": 42680066.0
+                        "parameter": 43
                     },
                     "128": {
-                        "acc": 0.84,
+                        "acc": 84.37,
                         "cpu_time": 516.5,
-                        "memory": 364.36,
+                        "memory": 364,
                         "gpu_time": 54.84,
-                        "parameter": 46317314.0
+                        "parameter": 46
                     },
                     "192": {
-                        "acc": 0.86,
+                        "acc": 86.38,
                         "cpu_time": 534.01,
-                        "memory": 386.11,
+                        "memory": 386,
                         "gpu_time": 69.48,
-                        "parameter": 49954562.0
+                        "parameter": 50
                     },
                     "256": {
-                        "acc": 0.85,
+                        "acc": 85.2,
                         "cpu_time": 592.69,
-                        "memory": 412.1,
+                        "memory": 412,
                         "gpu_time": 77.03,
-                        "parameter": 53591810.0
+                        "parameter": 54
                     },
                     "320": {
-                        "acc": 0.84,
+                        "acc": 83.64,
                         "cpu_time": 654.39,
-                        "memory": 440.11,
+                        "memory": 440,
                         "gpu_time": 88.49,
-                        "parameter": 57229058.0
+                        "parameter": 57
                     },
                     "-1": {
-                        "acc": 0.83,
+                        "acc": 82.67,
                         "cpu_time": 761.98,
-                        "memory": 523.35,
+                        "memory": 523,
                         "gpu_time": 108.86,
-                        "parameter": 67944194.0
+                        "parameter": 68
                     }
                 }
             }
@@ -52,46 +52,46 @@ var obj_sample = {
             "Transformer": {
                 "Random": {
                     "64": {
-                        "acc": 0.77,
+                        "acc": 76.56,
                         "cpu_time": 482.23,
-                        "memory": 347.48,
+                        "memory": 347,
                         "gpu_time": 44.66,
-                        "parameter": 42680066.0
+                        "parameter": 43
                     },
                     "128": {
-                        "acc": 0.76,
+                        "acc": 75.75,
                         "cpu_time": 516.5,
-                        "memory": 364.36,
+                        "memory": 364,
                         "gpu_time": 54.84,
-                        "parameter": 46317314.0
+                        "parameter": 46
                     },
                     "192": {
-                        "acc": 0.75,
+                        "acc": 75.48,
                         "cpu_time": 534.01,
-                        "memory": 386.11,
+                        "memory": 386,
                         "gpu_time": 69.48,
-                        "parameter": 49954562.0
+                        "parameter": 50
                     },
                     "256": {
-                        "acc": 0.76,
+                        "acc": 76.38,
                         "cpu_time": 592.69,
-                        "memory": 412.1,
+                        "memory": 412,
                         "gpu_time": 77.03,
-                        "parameter": 53591810.0
+                        "parameter": 54
                     },
                     "320": {
-                        "acc": 0.77,
+                        "acc": 76.7,
                         "cpu_time": 654.39,
-                        "memory": 440.11,
+                        "memory": 440,
                         "gpu_time": 88.49,
-                        "parameter": 57229058.0
+                        "parameter": 57
                     },
                     "-1": {
-                        "acc": 0.76,
+                        "acc": 75.57,
                         "cpu_time": 761.98,
-                        "memory": 523.35,
+                        "memory": 523,
                         "gpu_time": 108.86,
-                        "parameter": 67944194.0
+                        "parameter": 68
                     }
                 }
             }
@@ -100,46 +100,46 @@ var obj_sample = {
             "Transformer": {
                 "Random": {
                     "64": {
-                        "acc": 0.57,
+                        "acc": 56.65,
                         "cpu_time": 482.23,
-                        "memory": 347.48,
+                        "memory": 347,
                         "gpu_time": 44.66,
-                        "parameter": 42680066.0
+                        "parameter": 43
                     },
                     "128": {
-                        "acc": 0.57,
+                        "acc": 57.32,
                         "cpu_time": 516.5,
-                        "memory": 364.36,
+                        "memory": 364,
                         "gpu_time": 54.84,
-                        "parameter": 46317314.0
+                        "parameter": 46
                     },
                     "192": {
-                        "acc": 0.57,
+                        "acc": 57.39,
                         "cpu_time": 534.01,
-                        "memory": 386.11,
+                        "memory": 386,
                         "gpu_time": 69.48,
-                        "parameter": 49954562.0
+                        "parameter": 50
                     },
                     "256": {
-                        "acc": 0.58,
+                        "acc": 57.72,
                         "cpu_time": 592.69,
-                        "memory": 412.1,
+                        "memory": 412,
                         "gpu_time": 77.03,
-                        "parameter": 53591810.0
+                        "parameter": 54
                     },
                     "320": {
-                        "acc": 0.57,
+                        "acc": 57.48,
                         "cpu_time": 654.39,
-                        "memory": 440.11,
+                        "memory": 440,
                         "gpu_time": 88.49,
-                        "parameter": 57229058.0
+                        "parameter": 57
                     },
                     "-1": {
-                        "acc": 0.6,
+                        "acc": 60.14,
                         "cpu_time": 761.98,
-                        "memory": 523.35,
+                        "memory": 523,
                         "gpu_time": 108.86,
-                        "parameter": 67944194.0
+                        "parameter": 68
                     }
                 }
             }
@@ -148,46 +148,46 @@ var obj_sample = {
             "Transformer": {
                 "Random": {
                     "64": {
-                        "acc": 0.56,
+                        "acc": 55.62,
                         "cpu_time": 482.23,
-                        "memory": 347.48,
+                        "memory": 347,
                         "gpu_time": 44.66,
-                        "parameter": 42680066.0
+                        "parameter": 43
                     },
                     "128": {
-                        "acc": 0.56,
+                        "acc": 56.46,
                         "cpu_time": 516.5,
-                        "memory": 364.36,
+                        "memory": 364,
                         "gpu_time": 54.84,
-                        "parameter": 46317314.0
+                        "parameter": 46
                     },
                     "192": {
-                        "acc": 0.57,
+                        "acc": 57.03,
                         "cpu_time": 534.01,
-                        "memory": 386.11,
+                        "memory": 386,
                         "gpu_time": 69.48,
-                        "parameter": 49954562.0
+                        "parameter": 50
                     },
                     "256": {
-                        "acc": 0.57,
+                        "acc": 57.43,
                         "cpu_time": 592.69,
-                        "memory": 412.1,
+                        "memory": 412,
                         "gpu_time": 77.03,
-                        "parameter": 53591810.0
+                        "parameter": 54
                     },
                     "320": {
-                        "acc": 0.58,
+                        "acc": 57.93,
                         "cpu_time": 654.39,
-                        "memory": 440.11,
+                        "memory": 440,
                         "gpu_time": 88.49,
-                        "parameter": 57229058.0
+                        "parameter": 57
                     },
                     "-1": {
-                        "acc": 0.59,
+                        "acc": 59.0,
                         "cpu_time": 761.98,
-                        "memory": 523.35,
+                        "memory": 523,
                         "gpu_time": 108.86,
-                        "parameter": 67944194.0
+                        "parameter": 68
                     }
                 }
             }
@@ -196,46 +196,46 @@ var obj_sample = {
             "ResNext": {
                 "Random": {
                     "64": {
-                        "acc": 0.73,
+                        "acc": 73.36,
                         "cpu_time": 685.01,
-                        "memory": 40.42,
+                        "memory": 40,
                         "gpu_time": 136.89,
-                        "parameter": 4625730.0
+                        "parameter": 5
                     },
                     "128": {
-                        "acc": 0.78,
+                        "acc": 78.09,
                         "cpu_time": 717.94,
-                        "memory": 62.82,
+                        "memory": 62,
                         "gpu_time": 134.97,
-                        "parameter": 7648578.0
+                        "parameter": 8
                     },
                     "192": {
-                        "acc": 0.78,
+                        "acc": 77.75,
                         "cpu_time": 739.1,
-                        "memory": 85.2,
+                        "memory": 85,
                         "gpu_time": 139.8,
-                        "parameter": 10466626.0
+                        "parameter": 10
                     },
                     "256": {
-                        "acc": 0.81,
+                        "acc": 80.97,
                         "cpu_time": 769.98,
-                        "memory": 104.2,
+                        "memory": 104,
                         "gpu_time": 139.66,
-                        "parameter": 13022530.0
+                        "parameter": 13
                     },
                     "320": {
-                        "acc": 0.78,
+                        "acc": 78.18,
                         "cpu_time": 793.76,
-                        "memory": 123.57,
+                        "memory": 123,
                         "gpu_time": 143.38,
-                        "parameter": 15512898.0
+                        "parameter": 16
                     },
                     "-1": {
-                        "acc": 0.82,
+                        "acc": 82.18,
                         "cpu_time": 885.75,
-                        "memory": 181.07,
+                        "memory": 181,
                         "gpu_time": 143.13,
-                        "parameter": 22984002.0
+                        "parameter": 23
                     }
                 }
             }
@@ -244,46 +244,46 @@ var obj_sample = {
             "ResNext": {
                 "Random": {
                     "64": {
-                        "acc": 0.37,
+                        "acc": 37.12,
                         "cpu_time": 685.01,
-                        "memory": 40.42,
+                        "memory": 40,
                         "gpu_time": 136.89,
-                        "parameter": 4625730.0
+                        "parameter": 5
                     },
                     "128": {
-                        "acc": 0.37,
+                        "acc": 36.82,
                         "cpu_time": 717.94,
-                        "memory": 62.82,
+                        "memory": 62,
                         "gpu_time": 134.97,
-                        "parameter": 7648578.0
+                        "parameter": 8
                     },
                     "192": {
-                        "acc": 0.35,
+                        "acc": 35.39,
                         "cpu_time": 739.1,
-                        "memory": 85.2,
+                        "memory": 85,
                         "gpu_time": 139.8,
-                        "parameter": 10466626.0
+                        "parameter": 10
                     },
                     "256": {
-                        "acc": 0.42,
+                        "acc": 42.35,
                         "cpu_time": 769.98,
-                        "memory": 104.2,
+                        "memory": 104,
                         "gpu_time": 139.66,
-                        "parameter": 13022530.0
+                        "parameter": 13
                     },
                     "320": {
-                        "acc": 0.43,
+                        "acc": 42.88,
                         "cpu_time": 793.76,
-                        "memory": 123.57,
+                        "memory": 123,
                         "gpu_time": 143.38,
-                        "parameter": 15512898.0
+                        "parameter": 16
                     },
                     "-1": {
-                        "acc": 0.49,
+                        "acc": 49.38,
                         "cpu_time": 885.75,
-                        "memory": 181.07,
+                        "memory": 181,
                         "gpu_time": 143.13,
-                        "parameter": 22984002.0
+                        "parameter": 23
                     }
                 }
             }
@@ -294,90 +294,90 @@ var obj_sample = {
             "BERT-base": {
                 "SVD": {
                     "64": {
-                        "acc": 0.5,
+                        "acc": 50.46,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.82,
+                        "acc": 82.07,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.9,
+                        "acc": 90.18,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.92,
+                        "acc": 92.0,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.92,
+                        "acc": 92.31,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.93,
+                        "acc": 92.74,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 },
                 "SNMF": {
                     "64": {
-                        "acc": 0.5,
+                        "acc": 50.01,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.78,
+                        "acc": 78.48,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.9,
+                        "acc": 90.34,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.91,
+                        "acc": 91.28,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.92,
+                        "acc": 92.45,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.93,
+                        "acc": 92.74,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 }
             }
@@ -386,90 +386,90 @@ var obj_sample = {
             "BERT-base": {
                 "SVD": {
                     "64": {
-                        "acc": 0.52,
+                        "acc": 51.72,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.64,
+                        "acc": 63.76,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.8,
+                        "acc": 80.18,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.84,
+                        "acc": 84.43,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.86,
+                        "acc": 85.7,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.86,
+                        "acc": 86.24,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 },
                 "SNMF": {
                     "64": {
-                        "acc": 0.52,
+                        "acc": 51.72,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.72,
+                        "acc": 72.17,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.8,
+                        "acc": 79.82,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.83,
+                        "acc": 82.9,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.86,
+                        "acc": 85.7,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.86,
+                        "acc": 86.24,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 }
             }
@@ -478,90 +478,90 @@ var obj_sample = {
             "BERT-base": {
                 "SVD": {
                     "64": {
-                        "acc": 0.67,
+                        "acc": 67.06,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.79,
+                        "acc": 78.81,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.81,
+                        "acc": 81.42,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.82,
+                        "acc": 81.81,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.82,
+                        "acc": 82.05,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.82,
+                        "acc": 82.33,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 },
                 "SNMF": {
                     "64": {
-                        "acc": 0.68,
+                        "acc": 67.76,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.76,
+                        "acc": 75.87,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.8,
+                        "acc": 80.4,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.81,
+                        "acc": 81.13,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.82,
+                        "acc": 81.87,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.82,
+                        "acc": 82.33,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 }
             }
@@ -570,90 +570,90 @@ var obj_sample = {
             "BERT-base": {
                 "SVD": {
                     "64": {
-                        "acc": 0.68,
+                        "acc": 68.48,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.79,
+                        "acc": 79.45,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.82,
+                        "acc": 81.8,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.82,
+                        "acc": 82.49,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.83,
+                        "acc": 82.86,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.83,
+                        "acc": 83.44,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 },
                 "SNMF": {
                     "64": {
-                        "acc": 0.69,
+                        "acc": 69.44,
                         "cpu_time": 195.57,
-                        "memory": 319.37,
+                        "memory": 319,
                         "gpu_time": 32.33,
-                        "parameter": 83047682.0
+                        "parameter": 83
                     },
                     "128": {
-                        "acc": 0.77,
+                        "acc": 77.23,
                         "cpu_time": 202.08,
-                        "memory": 337.25,
+                        "memory": 337,
                         "gpu_time": 33.36,
-                        "parameter": 86684930.0
+                        "parameter": 87
                     },
                     "192": {
-                        "acc": 0.81,
+                        "acc": 81.07,
                         "cpu_time": 209.56,
-                        "memory": 347.12,
+                        "memory": 347,
                         "gpu_time": 34.5,
-                        "parameter": 90322178.0
+                        "parameter": 90
                     },
                     "256": {
-                        "acc": 0.82,
+                        "acc": 81.89,
                         "cpu_time": 217.93,
-                        "memory": 361.0,
+                        "memory": 360,
                         "gpu_time": 35.71,
-                        "parameter": 93959426.0
+                        "parameter": 94
                     },
                     "320": {
-                        "acc": 0.83,
+                        "acc": 82.86,
                         "cpu_time": 222.08,
-                        "memory": 374.87,
+                        "memory": 374,
                         "gpu_time": 38.0,
-                        "parameter": 97596674.0
+                        "parameter": 98
                     },
                     "-1": {
-                        "acc": 0.83,
+                        "acc": 83.44,
                         "cpu_time": 253.73,
-                        "memory": 424.94,
+                        "memory": 424,
                         "gpu_time": 39.05,
-                        "parameter": 108311810.0
+                        "parameter": 108
                     }
                 }
             }
@@ -662,90 +662,90 @@ var obj_sample = {
             "ResNext": {
                 "SVD": {
                     "64": {
-                        "acc": 0.42,
+                        "acc": 42.32,
                         "cpu_time": 241.38,
-                        "memory": 41.82,
+                        "memory": 41,
                         "gpu_time": 35.9,
-                        "parameter": 10663234.0
+                        "parameter": 11
                     },
                     "128": {
-                        "acc": 0.76,
+                        "acc": 76.11,
                         "cpu_time": 243.13,
-                        "memory": 46.82,
+                        "memory": 46,
                         "gpu_time": 35.57,
-                        "parameter": 11973954.0
+                        "parameter": 12
                     },
                     "192": {
-                        "acc": 0.83,
+                        "acc": 82.78,
                         "cpu_time": 244.89,
-                        "memory": 51.82,
+                        "memory": 51,
                         "gpu_time": 36.0,
-                        "parameter": 13284674.0
+                        "parameter": 13
                     },
                     "256": {
-                        "acc": 0.85,
+                        "acc": 84.64,
                         "cpu_time": 246.55,
-                        "memory": 57.45,
+                        "memory": 57,
                         "gpu_time": 35.84,
-                        "parameter": 14595394.0
+                        "parameter": 15
                     },
                     "320": {
-                        "acc": 0.85,
+                        "acc": 85.01,
                         "cpu_time": 248.91,
-                        "memory": 61.82,
+                        "memory": 61,
                         "gpu_time": 36.55,
-                        "parameter": 15906114.0
+                        "parameter": 16
                     },
                     "-1": {
-                        "acc": 0.86,
+                        "acc": 85.59,
                         "cpu_time": 278.33,
-                        "memory": 89.45,
+                        "memory": 89,
                         "gpu_time": 36.82,
-                        "parameter": 22984002.0
+                        "parameter": 23
                     }
                 },
                 "SNMF": {
                     "64": {
-                        "acc": 0.28,
+                        "acc": 27.99,
                         "cpu_time": 241.38,
-                        "memory": 41.82,
+                        "memory": 41,
                         "gpu_time": 35.9,
-                        "parameter": 10663234.0
+                        "parameter": 11
                     },
                     "128": {
-                        "acc": 0.72,
+                        "acc": 71.73,
                         "cpu_time": 243.13,
-                        "memory": 46.82,
+                        "memory": 46,
                         "gpu_time": 35.57,
-                        "parameter": 11973954.0
+                        "parameter": 12
                     },
                     "192": {
-                        "acc": 0.81,
+                        "acc": 81.18,
                         "cpu_time": 244.89,
-                        "memory": 51.82,
+                        "memory": 51,
                         "gpu_time": 36.0,
-                        "parameter": 13284674.0
+                        "parameter": 13
                     },
                     "256": {
-                        "acc": 0.84,
+                        "acc": 83.86,
                         "cpu_time": 246.55,
-                        "memory": 57.45,
+                        "memory": 57,
                         "gpu_time": 35.84,
-                        "parameter": 14595394.0
+                        "parameter": 15
                     },
                     "320": {
-                        "acc": 0.85,
+                        "acc": 84.51,
                         "cpu_time": 248.91,
-                        "memory": 61.82,
+                        "memory": 61,
                         "gpu_time": 36.55,
-                        "parameter": 15906114.0
+                        "parameter": 16
                     },
                     "-1": {
-                        "acc": 0.86,
+                        "acc": 85.59,
                         "cpu_time": 278.33,
-                        "memory": 89.45,
+                        "memory": 89,
                         "gpu_time": 36.82,
-                        "parameter": 22984002.0
+                        "parameter": 23
                     }
                 }
             }
@@ -754,90 +754,90 @@ var obj_sample = {
             "ResNext": {
                 "SVD": {
                     "64": {
-                        "acc": 0.03,
+                        "acc": 3.21,
                         "cpu_time": 241.38,
-                        "memory": 41.82,
+                        "memory": 41,
                         "gpu_time": 35.9,
-                        "parameter": 10663234.0
+                        "parameter": 11
                     },
                     "128": {
-                        "acc": 0.16,
+                        "acc": 15.68,
                         "cpu_time": 243.13,
-                        "memory": 46.82,
+                        "memory": 46,
                         "gpu_time": 35.57,
-                        "parameter": 11973954.0
+                        "parameter": 12
                     },
                     "192": {
-                        "acc": 0.4,
+                        "acc": 39.98,
                         "cpu_time": 244.89,
-                        "memory": 51.82,
+                        "memory": 51,
                         "gpu_time": 36.0,
-                        "parameter": 13284674.0
+                        "parameter": 13
                     },
                     "256": {
-                        "acc": 0.53,
+                        "acc": 52.62,
                         "cpu_time": 246.55,
-                        "memory": 57.45,
+                        "memory": 57,
                         "gpu_time": 35.84,
-                        "parameter": 14595394.0
+                        "parameter": 15
                     },
                     "320": {
-                        "acc": 0.57,
+                        "acc": 57.38,
                         "cpu_time": 248.91,
-                        "memory": 61.82,
+                        "memory": 61,
                         "gpu_time": 36.55,
-                        "parameter": 15906114.0
+                        "parameter": 16
                     },
                     "-1": {
-                        "acc": 0.62,
+                        "acc": 61.94,
                         "cpu_time": 278.33,
-                        "memory": 89.45,
+                        "memory": 89,
                         "gpu_time": 36.82,
-                        "parameter": 22984002.0
+                        "parameter": 23
                     }
                 },
                 "SNMF": {
                     "64": {
-                        "acc": 0.03,
+                        "acc": 3.46,
                         "cpu_time": 241.38,
-                        "memory": 41.82,
+                        "memory": 41,
                         "gpu_time": 35.9,
-                        "parameter": 10663234.0
+                        "parameter": 11
                     },
                     "128": {
-                        "acc": 0.12,
+                        "acc": 12.42,
                         "cpu_time": 243.13,
-                        "memory": 46.82,
+                        "memory": 46,
                         "gpu_time": 35.57,
-                        "parameter": 11973954.0
+                        "parameter": 12
                     },
                     "192": {
-                        "acc": 0.33,
+                        "acc": 32.56,
                         "cpu_time": 244.89,
-                        "memory": 51.82,
+                        "memory": 51,
                         "gpu_time": 36.0,
-                        "parameter": 13284674.0
+                        "parameter": 13
                     },
                     "256": {
-                        "acc": 0.47,
+                        "acc": 46.58,
                         "cpu_time": 246.55,
-                        "memory": 57.45,
+                        "memory": 57,
                         "gpu_time": 35.84,
-                        "parameter": 14595394.0
+                        "parameter": 15
                     },
                     "320": {
-                        "acc": 0.52,
+                        "acc": 51.86,
                         "cpu_time": 248.91,
-                        "memory": 61.82,
+                        "memory": 61,
                         "gpu_time": 36.55,
-                        "parameter": 15906114.0
+                        "parameter": 16
                     },
                     "-1": {
-                        "acc": 0.62,
+                        "acc": 61.94,
                         "cpu_time": 278.33,
-                        "memory": 89.45,
+                        "memory": 89,
                         "gpu_time": 36.82,
-                        "parameter": 22984002.0
+                        "parameter": 23
                     }
                 }
             }
@@ -850,74 +850,74 @@ var obj_sample = {
                     "128": {
                         "acc": 54.07,
                         "cpu_time": 95.46,
-                        "memory": 1088.26,
+                        "memory": 1088,
                         "gpu_time": 51.23,
-                        "parameter": 270937088.0
+                        "parameter": 271
                     },
                     "256": {
                         "acc": 55.38,
                         "cpu_time": 103.19,
-                        "memory": 1153.08,
+                        "memory": 1153,
                         "gpu_time": 53.62,
-                        "parameter": 287714304.0
+                        "parameter": 288
                     },
                     "384": {
                         "acc": 58.46,
                         "cpu_time": 109.21,
-                        "memory": 1220.76,
+                        "memory": 1220,
                         "gpu_time": 56.78,
-                        "parameter": 304491520.0
+                        "parameter": 304
                     },
                     "512": {
                         "acc": 62.44,
                         "cpu_time": 117.89,
-                        "memory": 1280.08,
+                        "memory": 1280,
                         "gpu_time": 58.21,
-                        "parameter": 321268736.0
+                        "parameter": 321
                     },
                     "-1": {
                         "acc": 63.57,
                         "cpu_time": 123.99,
-                        "memory": 1408.08,
+                        "memory": 1408,
                         "gpu_time": 58.9,
-                        "parameter": 354823168.0
+                        "parameter": 355
                     }
                 },
                 "SNMF": {
                     "128": {
                         "acc": 53.03,
                         "cpu_time": 95.46,
-                        "memory": 1088.26,
+                        "memory": 1088,
                         "gpu_time": 51.23,
-                        "parameter": 270937088.0
+                        "parameter": 271
                     },
                     "256": {
                         "acc": 53.39,
                         "cpu_time": 103.19,
-                        "memory": 1153.08,
+                        "memory": 1153,
                         "gpu_time": 53.62,
-                        "parameter": 287714304.0
+                        "parameter": 288
                     },
                     "384": {
                         "acc": 57.51,
                         "cpu_time": 109.21,
-                        "memory": 1220.76,
+                        "memory": 1220,
                         "gpu_time": 56.78,
-                        "parameter": 304491520.0
+                        "parameter": 304
                     },
                     "512": {
                         "acc": 56.74,
                         "cpu_time": 117.89,
-                        "memory": 1280.08,
+                        "memory": 1280,
                         "gpu_time": 58.21,
-                        "parameter": 321268736.0
+                        "parameter": 321
                     },
                     "-1": {
                         "acc": 63.57,
                         "cpu_time": 123.99,
-                        "memory": 1408.08,
+                        "memory": 1408,
                         "gpu_time": 58.9,
-                        "parameter": 354823168.0
+                        "parameter": 355
                     }
                 }
             },
@@ -926,74 +926,74 @@ var obj_sample = {
                     "128": {
                         "acc": 50.05,
                         "cpu_time": 126.57,
-                        "memory": 2304.27,
+                        "memory": 2304,
                         "gpu_time": 32.43,
-                        "parameter": 569557760.0
+                        "parameter": 570
                     },
                     "256": {
                         "acc": 52.49,
                         "cpu_time": 137.94,
-                        "memory": 2423.65,
+                        "memory": 2423,
                         "gpu_time": 33.32,
-                        "parameter": 601015040.0
+                        "parameter": 601
                     },
                     "384": {
                         "acc": 59.5,
                         "cpu_time": 144.44,
-                        "memory": 2545.13,
+                        "memory": 2545,
                         "gpu_time": 34.7,
-                        "parameter": 632472320.0
+                        "parameter": 632
                     },
                     "512": {
                         "acc": 66.29,
                         "cpu_time": 157.61,
-                        "memory": 2663.65,
+                        "memory": 2663,
                         "gpu_time": 35.05,
-                        "parameter": 663929600.0
+                        "parameter": 664
                     },
                     "-1": {
                         "acc": 61.13,
                         "cpu_time": 178.4,
-                        "memory": 3107.65,
+                        "memory": 3107,
                         "gpu_time": 37.19,
-                        "parameter": 774030080.0
+                        "parameter": 774
                     }
                 },
                 "SNMF": {
                     "128": {
                         "acc": 48.73,
                         "cpu_time": 126.57,
-                        "memory": 2304.27,
+                        "memory": 2304,
                         "gpu_time": 32.43,
-                        "parameter": 569557760.0
+                        "parameter": 570
                     },
                     "256": {
                         "acc": 53.35,
                         "cpu_time": 137.94,
-                        "memory": 2423.65,
+                        "memory": 2423,
                         "gpu_time": 33.32,
-                        "parameter": 601015040.0
+                        "parameter": 601
                     },
                     "384": {
                         "acc": 48.42,
                         "cpu_time": 144.44,
-                        "memory": 2545.13,
+                        "memory": 2545,
                         "gpu_time": 34.7,
-                        "parameter": 632472320.0
+                        "parameter": 632
                     },
                     "512": {
                         "acc": 51.09,
                         "cpu_time": 157.61,
-                        "memory": 2663.65,
+                        "memory": 2663,
                         "gpu_time": 35.05,
-                        "parameter": 663929600.0
+                        "parameter": 664
                     },
                     "-1": {
                         "acc": 61.13,
                         "cpu_time": 178.4,
-                        "memory": 3107.65,
+                        "memory": 3107,
                         "gpu_time": 37.19,
-                        "parameter": 774030080.0
+                        "parameter": 774
                     }
                 }
             },
@@ -1002,78 +1002,74 @@ var obj_sample = {
                     "128": {
                         "acc": 51.76,
                         "cpu_time": 191.43,
-                        "memory": 4440.78,
+                        "memory": 4440,
                         "gpu_time": 25.7,
-                        "parameter": 1118520000.0
+                        "parameter": 1119
                     },
                     "256": {
                         "acc": 53.08,
                         "cpu_time": 210.44,
-                        "memory": 4640.63,
+                        "memory": 4640,
                         "gpu_time": 26.51,
-                        "parameter": 1170948800.0
+                        "parameter": 1171
                     },
                     "384": {
                         "acc": 71.99,
                         "cpu_time": 214.92,
-                        "memory": 4839.77,
+                        "memory": 4839,
                         "gpu_time": 27.56,
-                        "parameter": 1223377600.0
+                        "parameter": 1223
                     },
                     "512": {
                         "acc": 77.33,
                         "cpu_time": 235.81,
-                        "memory": 5040.63,
+                        "memory": 5040,
                         "gpu_time": 27.96,
-                        "parameter": 1275806400.0
+                        "parameter": 1276
                     },
                     "-1": {
                         "acc": 81.31,
                         "cpu_time": 283.26,
-                        "memory": 6158.91,
-                        "parameter": 1557611200.0
-                    },
-                    "640": {
-                        "gpu_time": 29.56
+                        "memory": 6158,
+                        "gpu_time": 29.56,
+                        "parameter": 1558
                     }
                 },
                 "SNMF": {
                     "128": {
                         "acc": 51.72,
                         "cpu_time": 191.43,
-                        "memory": 4440.78,
+                        "memory": 4440,
                         "gpu_time": 25.7,
-                        "parameter": 1118520000.0
+                        "parameter": 1119
                     },
                     "256": {
                         "acc": 51.72,
                         "cpu_time": 210.44,
-                        "memory": 4640.63,
+                        "memory": 4640,
                         "gpu_time": 26.51,
-                        "parameter": 1170948800.0
+                        "parameter": 1171
                     },
                     "384": {
                         "acc": 51.72,
                         "cpu_time": 214.92,
-                        "memory": 4839.77,
+                        "memory": 4839,
                         "gpu_time": 27.56,
-                        "parameter": 1223377600.0
+                        "parameter": 1223
                     },
                     "512": {
                         "acc": 51.81,
                         "cpu_time": 235.81,
-                        "memory": 5040.63,
+                        "memory": 5040,
                         "gpu_time": 27.96,
-                        "parameter": 1275806400.0
+                        "parameter": 1276
                     },
                     "-1": {
                         "acc": 81.31,
-                        "memory": 6158.91,
-                        "parameter": 1557611200.0
-                    },
-                    "640": {
                         "cpu_time": 283.26,
-                        "gpu_time": 29.56
+                        "memory": 6158,
+                        "gpu_time": 29.56,
+                        "parameter": 1558
                     }
                 }
             }
