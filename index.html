@@ -173,10 +173,28 @@
                 }
 
                 speed_margin_span = document.getElementById("speed_margin");
-                speed_margin_span.textContent = (gpu_ori - gpu_fact) * 100 / gpu_ori + "%"
+                speed_margin = (Math.round((gpu_ori - gpu_fact) * 10000 / gpu_ori) / 100)
+                if (speed_margin < 0){
+                    $('#speed_sign').text('reduction')
+                } else {
+                    $('#speed_sign').text('boost')
+                }
+                speed_margin_span.textContent = Math.abs(speed_margin) + "%"
 
                 performance_margin_span = document.getElementById("performance_margin");
-                performance_margin_span.textContent = (acc_ori - acc_fact) * 100 / gpu_ori + "%"
+                performance_margin = (Math.round((acc_ori - acc_fact) * 100) / 100)
+                if (performance_margin < 0){
+                    $('#performance_sign').text('increase')
+                } else {
+                    $('#performance_sign').text('decrease')
+                }
+                performance_margin_span.textContent = Math.abs(performance_margin) + "%"
+
+                if ((speed_margin > 0) & (performance_margin < 0)){
+                    $('#trade-off').text('with additional')
+                } else {
+                    $('#trade-off').text('in exchange of')
+                }
 
                 console.log(gpu_fact)
 
@@ -387,7 +405,7 @@
                                             <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(211, 238, 61)">'transformer'</span>)</p>
                                             <p id="pre_training_autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_pre" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span style="color:rgb(211, 238, 61)">'random'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
                                             <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
-                                            <p id="submodule_call">submodules = <span style="color:rgb(255, 241, 161)">get_submodules</span>(<span style="color:rgb(211, 238, 61)">model</span>,<span class="model_type" style="color:rgb(90, 223, 247)">'bert-base'</span>)</p>
+                                            <p id="submodule_call">submodules = <span style="color:rgb(255, 241, 161)">get_submodules</span>(<span style="color:rgb(211, 238, 61)">model</span>,<span class="model_type" style="color:rgb(211, 238, 61)">'bert-base'</span>)</p>
                                             <p id="post_training_autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_post" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(211, 238, 61)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span id="submodule_param" style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
                                             <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
                                         </div>
@@ -488,7 +506,7 @@
                         </div>
                     </div>
                     <div class="alert alert-primary text-center" role="alert">
-                        <span id="speed_margin" style="font-size: 22px;">50%</span> training GPU speed boost in exchange of <span id="performance_margin" style="font-size: 22px;">10%</span> decrease in accuracy performance
+                        <span id="speed_margin" style="font-size: 28px;">50%</span> training GPU speed <span id=speed_sign>boost</span> <span id="trade-off">in exchange of</span> <span id="performance_margin" style="font-size: 28px;">10%</span> <span id="performance_sign">decrease</span> in accuracy performance
                     </div>
                 </div>
             </div>
