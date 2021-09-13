@@ -45,6 +45,8 @@
                     var auto_fact_style_select = document.getElementById('auto-fact-style');
                     auto_fact_style = auto_fact_style_select.value;
 
+                    $('#colab-auto-fact-style').text(auto_fact_style)
+
                     if (auto_fact_style == "Factorization-by-design"){
                         $("#pre_training_autofact_model").show()
                         $(".training_phase").show()
@@ -395,7 +397,12 @@
                         </select>
                     </div>
                 </div>
-                <div class="mt-5">
+                <div id="go-to-results" class="row m-1" style="display: none;">
+                    <a class="btn btn-primary" href="#results-auto-fact">
+                        Go to results
+                    </a>
+                </div>
+                <div class="mt-5 align-middle">
                     <div class="row justify-content-between">
                         <div class="col-6 ml-auto">
                             <div class="display-6 text-center mb-3">
@@ -441,7 +448,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div id="results-auto-fact">
                     <div class="row justify-content-between my-1">
                         <div class="col-6 ml-auto">
                             <div class="card h-100">
@@ -546,8 +553,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-primary text-center align-middle" role="alert">
-                        <span id="speed_margin" style="font-size: 28px;">50%</span> training GPU speed <span id=speed_sign>boost</span> <span id="trade-off">in exchange of</span> <span id="performance_margin" style="font-size: 28px;">10%</span> <span id="performance_sign">decrease</span> in accuracy performance
+                    <div class="alert alert-primary text-center align-middle m-1" role="alert">
+                        <div>
+                            <span id="speed_margin" style="font-size: 2em;">50%</span> training GPU speed <span id=speed_sign>boost</span> <span id="trade-off">in exchange of</span> <span id="performance_margin" style="font-size: 2em;">10%</span> <span id="performance_sign">decrease</span> in accuracy performance
+                        </div>
+                    </div>
+                    <div class="alert alert-info text-center align-middle mb-3" role="alert">
+                        Try AutoFact for <b id="colab-auto-fact-style">Factorization-by-design</b> on <a href="#">Google Colab</a>.
                     </div>
                 </div>
             </div>

@@ -72,6 +72,10 @@ pre {
         display: none;
     }
 
+    #go-to-results {
+        display: block !important;
+    }
+
     .long-text-auto-fact {
         text-align: justify !important;
     }
