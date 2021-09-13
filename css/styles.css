@@ -61,3 +61,18 @@ pre {
 .footer-auto-fact {
     background: rgba(0, 0, 0, 1);
 }
+
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    #intro-auto-fact, .select-auto-fact, .footer-items-auto-fact {
+      width: 100%;
+    }
+
+    #intro-image-auto-fact {
+        display: none;
+    }
+
+    .long-text-auto-fact {
+        text-align: justify !important;
+    }
+}
