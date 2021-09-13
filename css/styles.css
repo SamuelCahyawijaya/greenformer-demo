@@ -1,5 +1,5 @@
 .banner-auto-fact {
-    background-image: url('https://wallpapercave.com/wp/wp3720100.jpg');
+    background-image: url(../img/bg.png);
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,13 +62,42 @@ pre {
     background: rgba(0, 0, 0, 1);
 }
 
+.text-success {
+    color: rgba(72, 128, 29,255) !important;
+}
+
+.alert-info {
+    color: rgba(72, 128, 29, 255) !important;
+    background-color: rgba(199, 235, 186, 255) !important;
+    border: none;
+}
+
+a, a:active, a:hover {
+    color: rgba(199, 235, 186, 255);
+}
+
+.try-auto-fact {
+    font-size: smaller;
+    background: rgba(255, 255, 255, 0.35);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.5em;
+    border: none;
+    border-radius: .2rem;
+}
+
+.try-auto-fact:active, .try-auto-fact:focus, .try-auto-fact:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 @media only screen and (max-width: 620px) {
     /* For mobile phones: */
     #intro-auto-fact, .select-auto-fact, .footer-items-auto-fact {
       width: 100%;
     }
 
-    #intro-image-auto-fact {
+    #intro-image-auto-fact, #try-auto-fact-text {
         display: none;
     }
 

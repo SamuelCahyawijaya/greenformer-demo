@@ -398,7 +398,7 @@
                     </div>
                 </div>
                 <div id="go-to-results" class="row m-1" style="display: none;">
-                    <a class="btn btn-primary" href="#results-auto-fact">
+                    <a class="btn btn-success" href="#results-auto-fact">
                         Go to results
                     </a>
                 </div>
@@ -420,10 +420,10 @@
                             <div class="card h-100 code-box-auto-fact">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span></p>
-                                        <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(211, 238, 61)">'transformer'</span>)</p>
-                                        <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
-                                        <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
+                                        <p>from <span style="color:rgb(255, 175, 89)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span></p>
+                                        <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(255, 175, 89)">'transformer'</span>)</p>
+                                        <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
+                                        <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
                                     </div>
                                 </div>
                             </div>
@@ -432,17 +432,18 @@
                             <div class="card h-100 code-box-auto-fact">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <div class="card-text">
-                                            <p>from <span style="color:rgb(211, 238, 61)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span><span id="submodule_import">, <span style="color:rgb(255, 241, 161)">get_submodules</span></span></p>
-                                            <p>from <span style="color:rgb(211, 238, 61)">py_auto_fact</span> import <span style="color:orange">auto_fact</span></p>
-                                            <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(211, 238, 61)">'transformer'</span>)</p>
-                                            <p id="pre_training_autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_pre" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span style="color:rgb(211, 238, 61)">'random'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
-                                            <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
-                                            <p id="submodule_call">submodules = <span style="color:rgb(255, 241, 161)">get_submodules</span>(<span style="color:rgb(211, 238, 61)">model</span>,<span class="model_type" style="color:rgb(211, 238, 61)">'bert-base'</span>)</p>
-                                            <p id="post_training_autofact_model">model = <span style="color:orange">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(211, 238, 61)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_post" style="color:rgb(211, 238, 61)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(211, 238, 61)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(211, 238, 61)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span id="submodule_param" style="color:rgb(211, 238, 61)"><i>None</i></span>)</p>
-                                            <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(211, 238, 61)">model</span>)</p>
+                                        <div class="card-text mb-5">
+                                            <p>from <span style="color:rgb(255, 175, 89)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span><span id="submodule_import">, <span style="color:rgb(255, 241, 161)">get_submodules</span></span></p>
+                                            <p>from <span style="color:rgb(255, 175, 89)">py_auto_fact</span> import <span style="color:rgb(183, 255, 0)">auto_fact</span></p>
+                                            <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(255, 175, 89)">'transformer'</span>)</p>
+                                            <p id="pre_training_autofact_model">model = <span style="color:rgb(183, 255, 0)">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(255, 175, 89)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_pre" style="color:rgb(255, 175, 89)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span style="color:rgb(255, 175, 89)">'random'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(255, 175, 89)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(255, 175, 89)"><i>None</i></span>)</p>
+                                            <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
+                                            <p id="submodule_call">submodules = <span style="color:rgb(255, 241, 161)">get_submodules</span>(<span style="color:rgb(255, 175, 89)">model</span>,<span class="model_type" style="color:rgb(255, 175, 89)">'bert-base'</span>)</p>
+                                            <p id="post_training_autofact_model">model = <span style="color:rgb(255, 175, 89)">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(255, 175, 89)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_post" style="color:rgb(255, 175, 89)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(255, 175, 89)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(255, 175, 89)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span id="submodule_param" style="color:rgb(255, 175, 89)"><i>None</i></span>)</p>
+                                            <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
                                         </div>
                                     </div>
+                                    <a class="btn text-light float-end try-auto-fact" href="#"><i class="fas fa-external-link-alt"></i><span id="try-auto-fact-text"> Try AutoFact for <b id="colab-auto-fact-style">Factorization-by-design</b> on Google Colab.</span></a>
                                 </div>
                             </div>
                         </div>
@@ -553,13 +554,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-primary text-center align-middle m-1" role="alert">
+                    <div class="alert alert-info text-center align-middle" role="alert">
                         <div>
                             <span id="speed_margin" style="font-size: 2em;">50%</span> training GPU speed <span id=speed_sign>boost</span> <span id="trade-off">in exchange of</span> <span id="performance_margin" style="font-size: 2em;">10%</span> <span id="performance_sign">decrease</span> in accuracy performance
                         </div>
-                    </div>
-                    <div class="alert alert-info text-center align-middle mb-3" role="alert">
-                        Try AutoFact for <b id="colab-auto-fact-style">Factorization-by-design</b> on <a href="#">Google Colab</a>.
                     </div>
                 </div>
             </div>
@@ -603,7 +601,7 @@
                     <div class="lead text-center m-3">
                         <p><b>Find out even more in:</b></p>
                         <small class="long-text-auto-fact">
-                            <div class="text-primary fw-bold">AutoFact: Factorization Library for More Efficient Deep Learning Models</div>
+                            <div class="text-success fw-bold">AutoFact: Factorization Library for More Efficient Deep Learning Models</div>
                             <div>Cahyawijaya, S.; Winata, G. I.; Lovenia, H.; Wilie, B. I.; Dai, W.; Ishii, E.; and Fung, P.</div>
                             <div>In 36th AAAI Conference on Artificial Intelligence (Demo Track), AAAI 2022, Vancouver, Canada, Feb 22 - March 1, 2022</div>
                             <div>More details: Paper to be linked in the near future</div>
