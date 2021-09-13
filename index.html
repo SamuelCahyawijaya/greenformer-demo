@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -306,6 +307,15 @@
                 var auto_fact_rank_select = document.getElementById('auto-fact-rank');
                 var auto_fact_rank_value = auto_fact_rank_select.options[auto_fact_rank_select.selectedIndex].value;
             }
+
+            function copy() {
+                var selection = window.getSelection();
+                var pip_text = document.querySelector('.pip-auto-fact-text');
+
+                navigator.clipboard.writeText(pip_text.value)
+                    .then(() => console.log(pip_text.value))
+                    .catch(err => console.log('Async writeText failed with error: "' + err + '"'));
+            }
         </script>
         <meta name="viewport" content="initial-scale=1.0, width=device-width">
     </head>
@@ -336,6 +346,12 @@
                                 </div>
                                 <div class="card-text" style="text-align: justify;">
                                     Easily factorize your deep learning model using the low-rank matrix factorization method to enable faster training and inference time on most of the deep learning model architectures. Use this library to robustly make your models smaller, faster, and cheaper in all runs.
+                                </div>
+                            </div>
+                            <div class="card-footer" style="border: none !important;">
+                                <div class="pip-auto-fact input-group my-3">
+                                    <input type="text" class="form-control pip-auto-fact-text" style="font-family: 'Courier New', Courier, monospace;" value="pip install PyAutoFact" aria-describedby="pip-auto-fact-button" disabled>
+                                    <button class="btn btn-light pip-auto-fact-button" type="button" id="pip-auto-fact-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Copied!" onclick="copy();"><i class="fas fa-copy"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -632,6 +648,17 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+
+            var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+                trigger: 'focus'
+            })
+        </script>
     </body>
     <footer class="footer-auto-fact text-light">
         <div class="text-center p-4">

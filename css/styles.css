@@ -91,6 +91,20 @@ a, a:active, a:hover {
     background: rgba(255, 255, 255, 0.25);
 }
 
+.pip-auto-fact {
+    width: fit-content;
+}
+
+.pip-auto-fact-text {
+    background: none !important;
+    color: white;
+}
+
+.pip-auto-fact-button:focus {
+    border: none;
+    box-shadow: none;
+}
+
 @media only screen and (max-width: 620px) {
     /* For mobile phones: */
     #intro-auto-fact, .select-auto-fact, .footer-items-auto-fact {
@@ -108,4 +122,8 @@ a, a:active, a:hover {
     .long-text-auto-fact {
         text-align: justify !important;
     }
+
+    /* .pip-auto-fact {
+        width: 100%;
+    } */
 }
