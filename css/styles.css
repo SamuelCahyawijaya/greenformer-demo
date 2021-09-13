@@ -66,6 +66,10 @@ pre {
     color: rgba(72, 128, 29,255) !important;
 }
 
+.btn-success {
+    background: rgba(72, 128, 29, 255) !important;
+}
+
 .alert-info {
     color: rgba(72, 128, 29, 255) !important;
     background-color: rgba(199, 235, 186, 255) !important;
@@ -92,12 +96,13 @@ a, a:active, a:hover {
 }
 
 .pip-auto-fact {
-    width: fit-content;
+    width: max-content;
 }
 
 .pip-auto-fact-text {
     background: none !important;
     color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .pip-auto-fact-button:focus {
@@ -105,7 +110,7 @@ a, a:active, a:hover {
     box-shadow: none;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 770px) {
     /* For mobile phones: */
     #intro-auto-fact, .select-auto-fact, .footer-items-auto-fact {
       width: 100%;
@@ -123,7 +128,7 @@ a, a:active, a:hover {
         text-align: justify !important;
     }
 
-    /* .pip-auto-fact {
+    .pip-auto-fact {
         width: 100%;
-    } */
+    }
 }
