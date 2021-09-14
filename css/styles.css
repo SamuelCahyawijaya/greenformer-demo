@@ -66,7 +66,7 @@ pre {
     color: rgba(72, 128, 29,255) !important;
 }
 
-.btn-success {
+.btn-success, .bg-success {
     background: rgba(72, 128, 29, 255) !important;
 }
 
@@ -108,6 +108,46 @@ a, a:active, a:hover {
 .pip-auto-fact-button:focus {
     border: none;
     box-shadow: none;
+}
+
+[negative-badge]:after {
+    background: red;
+    margin: 0.3em;
+    content: attr(negative-badge);
+    display: inline-block;
+    padding: .2em .4em;
+    font-size: .65em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: .55rem;
+}
+
+[negative-badge="0"]:after, [negative-badge=""]:after {
+   display: none;
+}
+
+[positive-badge]:after {
+    background: rgba(72, 128, 29, 255);
+    margin: 0.3em;
+    content: attr(positive-badge);
+    display: inline-block;
+    padding: .2em .4em;
+    font-size: .65em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: .55rem;
+}
+
+[positive-badge="0"]:after, [positive-badge=""]:after {
+   display: none;
 }
 
 @media only screen and (max-width: 770px) {

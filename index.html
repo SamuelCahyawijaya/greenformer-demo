@@ -193,17 +193,52 @@
                 speed_margin_span = document.getElementById("speed_margin");
                 speed_margin = (Math.round((gpu_ori - gpu_fact) * 10000 / gpu_ori) / 100)
                 if (speed_margin < 0){
+                    $('#gpu_fact_title').removeAttr('positive-badge')
+                    $('#gpu_fact_title').attr('negative-badge', '+' + Math.abs(speed_margin) + '%')
                     $('#speed_sign').text('reduction')
                 } else {
+                    $('#gpu_fact_title').removeAttr('negative-badge')
+                    $('#gpu_fact_title').attr('positive-badge', '-' + Math.abs(speed_margin) + '%')
                     $('#speed_sign').text('boost')
                 }
                 speed_margin_span.textContent = Math.abs(speed_margin) + "%"
 
+                cpu_speed_margin = (Math.round((cpu_ori - cpu_fact) * 10000 / cpu_ori) / 100)
+                if (cpu_speed_margin < 0){
+                    $('#cpu_fact_title').removeAttr('positive-badge')
+                    $('#cpu_fact_title').attr('negative-badge', '+' + Math.abs(cpu_speed_margin) + '%')
+                } else {
+                    $('#cpu_fact_title').removeAttr('negative-badge')
+                    $('#cpu_fact_title').attr('positive-badge', '-' + Math.abs(cpu_speed_margin) + '%')
+                }
+
+                memory_margin = (Math.round((memory_ori - memory_fact) * 10000 / memory_ori) / 100)
+                if (memory_margin < 0){
+                    $('#memory_fact_title').removeAttr('positive-badge')
+                    $('#memory_fact_title').attr('negative-badge', '+' + Math.abs(memory_margin) + '%')
+                } else {
+                    $('#memory_fact_title').removeAttr('negative-badge')
+                    $('#memory_fact_title').attr('positive-badge', '-' + Math.abs(memory_margin) + '%')
+                }
+
+                param_margin = (Math.round((param_ori - param_fact) * 10000 / param_ori) / 100)
+                if (param_margin < 0){
+                    $('#param_fact_title').removeAttr('positive-badge')
+                    $('#param_fact_title').attr('negative-badge', '+' + Math.abs(param_margin) + '%')
+                } else {
+                    $('#param_fact_title').removeAttr('negative-badge')
+                    $('#param_fact_title').attr('positive-badge', '-' + Math.abs(param_margin) + '%')
+                }
+
                 performance_margin_span = document.getElementById("performance_margin");
                 performance_margin = (Math.round((acc_ori - acc_fact) * 100) / 100)
                 if (performance_margin < 0){
+                    $('#acc_fact_title').removeAttr('negative-badge')
+                    $('#acc_fact_title').attr('positive-badge', '+' + Math.abs(performance_margin) + '%')
                     $('#performance_sign').text('increase')
                 } else {
+                    $('#acc_fact_title').removeAttr('positive-badge')
+                    $('#acc_fact_title').attr('negative-badge', '-' + Math.abs(performance_margin) + '%')
                     $('#performance_sign').text('decrease')
                 }
                 performance_margin_span.textContent = Math.abs(performance_margin) + "%"
@@ -323,11 +358,11 @@
         <div id="home" class="banner-auto-fact pb-3">
             <nav class="navbar navbar-autofact">
                 <div class="container container-fluid">
-                    <a class="navbar-brand fw-bold text-light" href="#">AutoFact</a>
+                    <a class="navbar-brand fw-bold text-light" href="#">Greenformer</a>
                     <div class="nav">
                         <a class="nav-link text-light" href="#demo">In Action</a>
                         <a class="nav-link text-light" href="#about">Details</a>
-                        <a class="nav-link text-light" href="https://pypi.org/project/PyAutoFact/">PyAutoFact</a>
+                        <a class="nav-link text-light" href="https://pypi.org/project/greenformer/">Greenformer</a>
                         <a class="nav-link text-light" href="#contact">Contact</a>
                     </div>
                 </div>
@@ -342,7 +377,7 @@
                                     <div class="lead" style="font-size: 0.4em;">Develop faster and more efficient models with</div>
                                 </div>
                                 <div class="card-title display-3 mb-3">
-                                    <b >AutoFact</b>
+                                    <b >Greenformer</b>
                                 </div>
                                 <div class="card-text" style="text-align: justify;">
                                     Easily factorize your deep learning model using the low-rank matrix factorization method to enable faster training and inference time on most of the deep learning model architectures. Use this library to robustly make your models smaller, faster, and cheaper in all runs.
@@ -350,7 +385,7 @@
                             </div>
                             <div class="card-footer" style="border: none !important;">
                                 <div class="pip-auto-fact input-group my-3">
-                                    <input type="text" class="form-control pip-auto-fact-text" value="pip install PyAutoFact" aria-describedby="pip-auto-fact-button" size="23" disabled>
+                                    <input type="text" class="form-control pip-auto-fact-text" value="pip install greenformer" aria-describedby="pip-auto-fact-button" size="23" disabled>
                                     <button class="btn btn-light pip-auto-fact-button" type="button" id="pip-auto-fact-button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Copied!" onclick="copy();"><i class="fas fa-copy"></i></button>
                                 </div>
                             </div>
@@ -366,11 +401,11 @@
         </div>
         <div class="demo-auto-fact container container-fluid">
             <div>
-                <div id="demo" class="display-5 text-center demo-title-box-auto-fact p-2">See <b>AutoFact</b> in action</div>
-                <div class="lead text-center m-3">Change the parameters and see the magic of <b>AutoFact</b></div>
+                <div id="demo" class="display-5 text-center demo-title-box-auto-fact p-2">See <b>Greenformer</b> in action</div>
+                <div class="lead text-center m-3">Change the parameters and see the magic of <b>Greenformer</b></div>
                 <div class="form-auto-fact row g-3 mx-1 my-2 p-3 justify-content-between">
                     <div class="col-2 select-auto-fact">
-                        <label for="auto-fact-style" class="form-label mx-1">AutoFact for</label>
+                        <label for="auto-fact-style" class="form-label mx-1">Greenformer for</label>
                         <select id="auto-fact-style" class="form-select" onchange=refreshSample(1)>
                             <option value="pre-training">Pre-training</option>
                             <option value="post-fine-tuning">Post fine-tuning</option>
@@ -395,7 +430,7 @@
                         </select>
                     </div>
                     <div class="col-2 select-auto-fact">
-                        <label for="auto-fact-solver" class="form-label mx-1">AutoFact solver</label>
+                        <label for="auto-fact-solver" class="form-label mx-1">Greenformer solver</label>
                         <select id="auto-fact-solver" class="form-select" onchange=refreshSample(4)>
                             <option value="random">Random</option>
                             <option value="svd">SVD</option>
@@ -403,7 +438,7 @@
                         </select>
                     </div>
                     <div class="col-2 select-auto-fact">
-                        <label for="auto-fact-rank" class="form-label mx-1">AutoFact rank</label>
+                        <label for="auto-fact-rank" class="form-label mx-1">Greenformer rank</label>
                         <select id="auto-fact-rank" class="form-select" onchange=refreshSample(5)>
                             <option value="64">64</option>
                             <option value="128">128</option>
@@ -427,7 +462,7 @@
                         </div>
                         <div class="col-6">
                             <div class="display-6 text-center mb-3">
-                                Adding <b>AutoFact</b> to your pipeline
+                                Adding <b>Greenformer</b> to your pipeline
                             </div>
                         </div>
                     </div>
@@ -450,7 +485,7 @@
                                     <div class="card-text">
                                         <div class="card-text mb-5">
                                             <p>from <span style="color:rgb(255, 175, 89)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span><span id="submodule_import">, <span style="color:rgb(255, 241, 161)">get_submodules</span></span></p>
-                                            <p>from <span style="color:rgb(255, 175, 89)">py_auto_fact</span> import <span style="color:rgb(183, 255, 0)">auto_fact</span></p>
+                                            <p>from <span style="color:rgb(255, 175, 89)">greenformer</span> import <span style="color:rgb(183, 255, 0)">auto_fact</span></p>
                                             <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(255, 175, 89)">'transformer'</span>)</p>
                                             <p id="pre_training_autofact_model">model = <span style="color:rgb(183, 255, 0)">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(255, 175, 89)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_pre" style="color:rgb(255, 175, 89)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span style="color:rgb(255, 175, 89)">'random'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(255, 175, 89)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(255, 175, 89)"><i>None</i></span>)</p>
                                             <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
@@ -459,7 +494,7 @@
                                             <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
                                         </div>
                                     </div>
-                                    <a class="btn text-light float-end try-auto-fact" href="#"><i class="fas fa-external-link-alt"></i><span id="try-auto-fact-text"> Try AutoFact for <b id="colab-auto-fact-style">Factorization-by-design</b> on Google Colab.</span></a>
+                                    <a class="btn text-light float-end try-auto-fact" href="#"><i class="fas fa-external-link-alt"></i><span id="try-auto-fact-text"> Try <b>Greenformer</b> for <span id="colab-auto-fact-style">Factorization-by-design</span> on Google Colab</span></a>
                                 </div>
                             </div>
                         </div>
@@ -510,56 +545,38 @@
                                         <div class="column">
                                             <div class="row">
                                                 <div class="col row my-1">
-                                                    <div class="col m-auto display-6" style="text-align: end;">
-                                                        <i id="down_acc" class="fas fa-thumbs-down text-danger"></i>
-                                                        <i id="up_acc" class="fas fa-thumbs-up text-success"></i>
-                                                    </div>
-                                                    <div class="col" style="text-align: start;">
-                                                        <div class="lead">Accuracy</div>
+                                                    <div class="col">
+                                                        <div id="acc_fact_title" class="lead">
+                                                            Accuracy
+                                                        </div>
                                                         <div id="acc_fact" class="display-6 fw-bold">77.94%</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col row my-1">
-                                                    <div class="col-1 m-auto display-6">
-                                                        <i id="down_gpu" class="fas fa-thumbs-down text-danger"></i>
-                                                        <i id="up_gpu" class="fas fa-thumbs-up text-success"></i>
-                                                    </div>
                                                     <div class="col">
-                                                        <div class="lead">GPU time (ms)</div>
+                                                        <div id="gpu_fact_title" class="lead">GPU time (ms)</div>
                                                         <div id="gpu_fact" class="display-6 fw-bold">40s</div>
                                                     </div>
                                                 </div>
                                                 <div class="col row my-1">
-                                                    <div class="col-1 m-auto display-6">
-                                                        <i id="down_cpu" class="fas fa-thumbs-down text-danger"></i>
-                                                        <i id="up_cpu" class="fas fa-thumbs-up text-success"></i>
-                                                    </div>
                                                     <div class="col">
-                                                        <div class="lead">CPU time (ms)</div>
+                                                        <div id="cpu_fact_title" class="lead">CPU time (ms)</div>
                                                         <div id="cpu_fact" class="display-6 fw-bold">45s</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col row my-1">
-                                                    <div class="col-1 m-auto display-6">
-                                                        <i id="down_memory" class="fas fa-thumbs-down text-danger"></i>
-                                                        <i id="up_memory" class="fas fa-thumbs-up text-success"></i>
-                                                    </div>
                                                     <div class="col">
-                                                        <div class="lead">Memory (MB)</div>
+                                                        <div id="memory_fact_title" class="lead">Memory (MB)</div>
                                                         <div id="memory_fact" class="display-6 fw-bold">100</div>
                                                     </div>
                                                 </div>
                                                 <div class="col row my-1">
-                                                    <div class="col-1 m-auto display-6">
-                                                        <i id="down_param" class="fas fa-thumbs-down text-danger"></i>
-                                                        <i id="up_param" class="fas fa-thumbs-up text-success"></i>
-                                                    </div>
                                                     <div class="col">
-                                                        <div class="lead">Parameters (mio)</div>
+                                                        <div id="param_fact_title" class="lead">Parameters (mio)</div>
                                                         <div id="param_fact" class="display-6 fw-bold">43</div>
                                                     </div>
                                                 </div>
@@ -580,10 +597,10 @@
         </div>
         <div id="about" class="about-auto-fact">
             <div class="container container-fluid py-5">
-                <div class="display-4 text-center">More about <b>AutoFact</b></div>
+                <div class="display-4 text-center">More about <b>Greenformer</b></div>
                     <div class="lead text-center m-3">
-                        AutoFact is flexible, easy-to-use, and applicable for multiple scenarios.</br>
-                        <b>Gain up to 1.5x speed increase while maintaining 93% of the performance</b> by utilising AutoFact.</br>
+                        Greenformer is flexible, easy-to-use, and applicable for multiple scenarios.</br>
+                        <b>Gain up to 1.5x speed increase while maintaining 93% of the performance</b> by utilising Greenformer.</br>
                     </div>
                     <div class="row justify-content-center text-center my-5">
                         <div class="col">
@@ -592,13 +609,13 @@
                             </div>
                             <img src="img/Performance comparisons.png" class="w-100">
                             <div class="m-3">
-                                <div><em>Performance and efficiency trade-off of utilizing AutoFact on:</em></div>
+                                <div><em>Performance and efficiency trade-off of utilizing Greenformer on:</em></div>
                                 <div><em><b>Left:</b> factorization-by-design, <b>Center:</b> post-training factorization, <b>Right:</b> in-context learning factorization</em></div>
                             </div>
                         </div>
                     </div>
                     <div class="lead text-center m-3 long-text-auto-fact">
-                        <b>AutoFact performs decomposition to the weight of linear and convolution layers</b> within the models utilizing factorization solvers like random, SVD, or SMNF, thus <b>replacing the linear layers  into  a  Low-rank  Encoder-Decoder (LED) layer and the convolution layers into a Convolution Encoder-Decoder (CED) layer</b>. AutoFact supports factorization with either a predefined static rank or dynamic ranks across all layers by computing the rank based on a ratio to the maximum rank of the corresponding layer.</br>
+                        <b>Greenformer performs decomposition to the weight of linear and convolution layers</b> within the models utilizing factorization solvers like random, SVD, or SMNF, thus <b>replacing the linear layers  into  a  Low-rank  Encoder-Decoder (LED) layer and the convolution layers into a Convolution Encoder-Decoder (CED) layer</b>. Greenformer supports factorization with either a predefined static rank or dynamic ranks across all layers by computing the rank based on a ratio to the maximum rank of the corresponding layer.</br>
                     </div>
                     <div class="row justify-content-center my-5">
                             <div class="display-6 text-center mb-3">
@@ -614,10 +631,10 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="lead text-center m-3">
+                    <div class="lead text-center m-3" style="display: none;">
                         <p><b>Find out even more in:</b></p>
                         <small class="long-text-auto-fact">
-                            <div class="text-success fw-bold">AutoFact: Factorization Library for More Efficient Deep Learning Models</div>
+                            <div class="text-success fw-bold">Greenformer: Factorization Library for More Efficient Deep Learning Models</div>
                             <div>Cahyawijaya, S.; Winata, G. I.; Lovenia, H.; Wilie, B. I.; Dai, W.; Ishii, E.; and Fung, P.</div>
                             <div>In 36th AAAI Conference on Artificial Intelligence (Demo Track), AAAI 2022, Vancouver, Canada, Feb 22 - March 1, 2022</div>
                             <div>More details: Paper to be linked in the near future</div>
@@ -631,19 +648,19 @@
             <div class="container container-fluid py-5">
                 <div class="row justify-content-between">
                     <div class="col-6 footer-items-auto-fact">
-                        <a href="https://github.com/SamuelCahyawijaya/py_auto_fact" class="text-light" style="text-decoration: none;">
+                        <a href="https://github.com/SamuelCahyawijaya/greenformer" class="text-light" style="text-decoration: none;">
                             <div class="lead mt-3 fw-bold"><i class="fab fa-github mt-3 me-3 display-6"></i>GitHub</div>
-                            <div class="my-3">Visit <b>PyAutoFact</b> repository here.</div>
+                            <div class="my-3">Visit <b>Greenformer</b> repository here.</div>
                         </a>
-                        <a href="https://pypi.org/project/PyAutoFact/" class="text-light" style="text-decoration: none;">
+                        <a href="https://pypi.org/project/greenformer/" class="text-light" style="text-decoration: none;">
                             <div class="lead mt-3 fw-bold"><i class="fab fa-python mt-5 me-3 display-6"></i>PyPi</div>
-                            <div class="my-3">Install <b>PyAutoFact</b> from PyPi.</div>
+                            <div class="my-3">Install <b>Greenformer</b> from PyPi.</div>
                         </a>
                     </div>
                     <div class="col-6 footer-items-auto-fact">
                         <div class="lead my-3 fw-bold">Cite us</div>
-                        <div class="my-3" style="text-align: justify;">AutoFact has been accepted by AAAI 2022 and you can find the paper <a href="#">here</a>. If you are using any component of AutoFact for research purposes, please cite the following paper:</div>
-                        <pre class="w-100 text-dark">@inproceedings{cahyawijaya2022autofact,<br>    title={AutoFact: Factorization Library for More Efficient Deep Learning Models},<br>    author={Samuel Cahyawijaya and Genta Indra Winata and Holy Lovenia and Bryan Wilie and Wenliang Dai and Etsuko Ishii and Pascale Fung},<br>    booktitle={Proceedings of the 36th AAAI Conference on Artificial Intelligence (Demo Track), 2022},<br>    year={2022}<br>}</pre>
+                        <div class="my-3" style="text-align: justify;">Greenformer has been accepted by AAAI 2022 and you can find the paper <a href="#">here</a>. If you are using any component of Greenformer for research purposes, please cite the following paper:</div>
+                        <pre class="w-100 text-dark">@inproceedings{cahyawijaya2022autofact,<br>    title={Greenformer: Factorization Library for More Efficient Deep Learning Models},<br>    author={Samuel Cahyawijaya and Genta Indra Winata and Holy Lovenia and Bryan Wilie and Wenliang Dai and Etsuko Ishii and Pascale Fung},<br>    booktitle={Proceedings of the 36th AAAI Conference on Artificial Intelligence (Demo Track), 2022},<br>    year={2022}<br>}</pre>
                     </div>
                 </div>
             </div>
@@ -663,7 +680,7 @@
     <footer class="footer-auto-fact text-light">
         <div class="text-center p-4">
             © 2021 Copyright:
-        <a class="text-reset fw-bold" href="#">AutoFact</a>
+        <a class="text-reset fw-bold" href="#">Greenformer</a>
         </div>
     </footer>
 </html>
