@@ -361,8 +361,8 @@
                     <a class="navbar-brand fw-bold text-light" href="#">Greenformer</a>
                     <div class="nav">
                         <a class="nav-link text-light" href="#demo">In Action</a>
+                        <a class="nav-link text-light" href="#examples">Examples</a>
                         <a class="nav-link text-light" href="#about">Details</a>
-                        <a class="nav-link text-light" href="https://pypi.org/project/greenformer/">Greenformer</a>
                         <a class="nav-link text-light" href="#contact">Contact</a>
                     </div>
                 </div>
@@ -462,7 +462,7 @@
                         </div>
                         <div class="col-6">
                             <div class="display-6 text-center mb-3">
-                                Adding <b>Greenformer</b> to your pipeline
+                                <b>Greenformer</b> in your pipeline
                             </div>
                         </div>
                     </div>
@@ -485,12 +485,12 @@
                                     <div class="card-text">
                                         <div class="card-text mb-5">
                                             <p>from <span style="color:rgb(255, 175, 89)">your_project</span> import <span style="color:rgb(255, 241, 161)">load_model</span>, <span style="color:rgb(255, 241, 161)">train</span>, <span style="color:rgb(255, 241, 161)">predict</span><span id="submodule_import">, <span style="color:rgb(255, 241, 161)">get_submodules</span></span></p>
-                                            <p>from <span style="color:rgb(255, 175, 89)">greenformer</span> import <span style="color:rgb(183, 255, 0)">auto_fact</span></p>
+                                            <p>from <span style="color:rgb(183, 255, 0)">greenformer</span> import <span style="color:rgb(183, 255, 0)">auto_fact</span></p>
                                             <p>model = <span style="color:rgb(255, 241, 161)">load_model</span>(<span class="model_type" style="color:rgb(255, 175, 89)">'transformer'</span>)</p>
                                             <p id="pre_training_autofact_model">model = <span style="color:rgb(183, 255, 0)">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(255, 175, 89)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_pre" style="color:rgb(255, 175, 89)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span style="color:rgb(255, 175, 89)">'random'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(255, 175, 89)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span style="color:rgb(255, 175, 89)"><i>None</i></span>)</p>
                                             <p class="training_phase">model = <span style="color:rgb(255, 241, 161)">train</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
                                             <p id="submodule_call">submodules = <span style="color:rgb(255, 241, 161)">get_submodules</span>(<span style="color:rgb(255, 175, 89)">model</span>,<span class="model_type" style="color:rgb(255, 175, 89)">'bert-base'</span>)</p>
-                                            <p id="post_training_autofact_model">model = <span style="color:rgb(255, 175, 89)">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(255, 175, 89)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_post" style="color:rgb(255, 175, 89)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(255, 175, 89)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(255, 175, 89)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span id="submodule_param" style="color:rgb(255, 175, 89)"><i>None</i></span>)</p>
+                                            <p id="post_training_autofact_model">model = <span style="color:rgb(183, 255, 0)">auto_fact</span>(<span style="color:rgb(90, 223, 247)">module</span>=<span style="color:rgb(255, 175, 89)">model</span>, <span style="color:rgb(90, 223, 247)">rank</span>=<span id="rank_post" style="color:rgb(255, 175, 89)">64</span>, <span style="color:rgb(90, 223, 247)">solver</span>=<span id="solver" style="color:rgb(255, 175, 89)">'svd'</span>, <span style="color:rgb(90, 223, 247)">num_iter</span>=<span id="num_iter" style="color:rgb(255, 175, 89)">50</span>, <span style="color:rgb(90, 223, 247)">submodules</span>=<span id="submodule_param" style="color:rgb(255, 175, 89)"><i>None</i></span>)</p>
                                             <p>score = <span style="color:rgb(255, 241, 161)">predict</span>(<span style="color:rgb(255, 175, 89)">model</span>)</p>
                                         </div>
                                     </div>
@@ -587,9 +587,44 @@
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-info text-center align-middle" role="alert">
+                    <div class="alert alert-info text-center align-middle" style="display: none;" role="alert">
                         <div>
                             <span id="speed_margin" style="font-size: 2em;">50%</span> GPU speed <span id=speed_sign>boost</span> <span id="trade-off">in exchange of</span> <span id="performance_margin" style="font-size: 2em;">10%</span> <span id="performance_sign">decrease</span> in accuracy performance
+                        </div>
+                    </div>
+                </div>
+                <div id="examples" class="text-center my-5">
+                    <div class="display-7 lead mb-3">Next stop: <b>Greenformer</b> on Google Colab</div>
+                    <div class="row row-cols-1 row-cols-md-3 g-6 m-3">
+                        <div class="col">
+                            <div class="post-it-auto-fact card h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-text">Factorize first, train after? Take a peek here.</p>
+                                </div>
+                                <div class="card-footer post-it-auto-fact-footer">
+                                    <a class="btn btn-sm btn-success fw-bold" target="_blank" href="https://colab.research.google.com/drive/1mFMiD-vUjUWoI_P1_RT4AvsGopdE4uuG?usp=sharing">Factorization-by-design</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="post-it-auto-fact card h-100">
+                                <div class="card-body">
+                                    <p class="card-text">Already finished training but need it to be faster, lighter, and cheaper?</p>
+                                </div>
+                                <div class="card-footer post-it-auto-fact-footer">
+                                    <a class="btn btn-sm btn-success fw-bold" target="_blank" href="https://colab.research.google.com/drive/19OkfRuF1IFowmYL71LwRXkkm-OwhpQ1G?usp=sharing">Post-tuning</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="post-it-auto-fact card h-100">
+                                <div class="card-body">
+                                    <p class="card-text">More interested in GPT family? No worries!</p>
+                                </div>
+                                <div class="card-footer post-it-auto-fact-footer">
+                                    <a class="btn btn-sm btn-success fw-bold" target="_blank" href="https://colab.research.google.com/drive/1w7AySF9mlHDu5IQ0XaH436tGeuGzqfxc?usp=sharing">In-context learning</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -648,11 +683,11 @@
             <div class="container container-fluid py-5">
                 <div class="row justify-content-between">
                     <div class="col-6 footer-items-auto-fact">
-                        <a href="https://github.com/SamuelCahyawijaya/greenformer" class="text-light" style="text-decoration: none;">
+                        <a target="_blank" href="https://github.com/SamuelCahyawijaya/greenformer" class="text-light" style="text-decoration: none;">
                             <div class="lead mt-3 fw-bold"><i class="fab fa-github mt-3 me-3 display-6"></i>GitHub</div>
                             <div class="my-3">Visit <b>Greenformer</b> repository here.</div>
                         </a>
-                        <a href="https://pypi.org/project/greenformer/" class="text-light" style="text-decoration: none;">
+                        <a target="_blank" href="https://pypi.org/project/greenformer/" class="text-light" style="text-decoration: none;">
                             <div class="lead mt-3 fw-bold"><i class="fab fa-python mt-5 me-3 display-6"></i>PyPi</div>
                             <div class="my-3">Install <b>Greenformer</b> from PyPi.</div>
                         </a>

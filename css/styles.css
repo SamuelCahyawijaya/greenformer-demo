@@ -110,6 +110,25 @@ a, a:active, a:hover {
     box-shadow: none;
 }
 
+.display-7 {
+    font-size: 2rem;
+}
+
+.post-it-auto-fact {
+    background: white;
+    box-shadow: 0 0.75em 1em -0.5em rgba(0, 0, 0, 0.5);
+    transition: transform .45s ease, background .45s ease;
+    border: none;
+    border-top: 0.2em solid rgba(72, 128, 29, 255);
+    border-radius: 0.5em;
+}
+
+.post-it-auto-fact-footer {
+    border: none;
+    background: none;
+    align-self: flex-end;
+}
+
 [negative-badge]:after {
     background: red;
     margin: 0.3em;
