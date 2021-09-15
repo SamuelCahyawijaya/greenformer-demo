@@ -190,3 +190,21 @@ a, a:active, a:hover {
         width: 100%;
     }
 }
+
+._green {
+    color: #38761d;
+}
+._former{
+    color: #b6d7a8;
+}
+.greenformer{
+    text-decoration: underline;
+    color: #38761d;
+}
+
+/* show underline on hover */
+.greenformer:hover {
+    text-decoration: underline;
+    text-decoration-color: #b6d7a8;
+    -webkit-text-decoration-color: #b6d7a8;
+}
